@@ -1,10 +1,10 @@
 # Brief CAO — Vitrine « aquarium » des cristaux (v01, 25-09-2026)
 
 Objectif : plans cotés + STEP pour devis fermes (chaudronnerie, usinage, vitrier).
-Base : principe constructif arrêté (site Les Veilleurs, section « Étude constructive de la niche »), variante 3 × 13 blocs paramétrable en 3 × 11.
+Base : principe constructif arrêté (site Les Veilleurs, section « Étude constructive de la niche »), 3 × 11 blocs (33), arrêté le 25-09-26.
 
 ## 1. Ensemble (fichier `aquarium_ensemble`)
-- Cavité utile : **2 604 × 333 × 120 mm** (L × H × P). Variante 11 blocs : 2 204 × 333 × 120.
+- Cavité utile : **2 204 × 333 × 120 mm** (L × H × P).
 - Origine du repère : angle inférieur gauche intérieur, face avant du cadre = plan Z = 0.
 - Assemblage : caisson + cadre + toron + couvercle (longerons + vitre) + 2 tubes.
 
@@ -21,7 +21,7 @@ Base : principe constructif arrêté (site Les Veilleurs, section « Étude cons
 ## 3. Couvercle (usinage + vitrier)
 - 4 **longerons 60×24** en 316L usinés, **battée 32 × 19** côté intérieur (talon plein 28 × 24 en appui sur le cadre).
 - Assemblage d'angle : coupe d'onglet 45°, goujonné et collé ; ou angles usinés dans la masse (à proposer par l'atelier).
-- Perçages fraisés pour **vis M4×30 Torx T20** en vis-à-vis des taraudages du cadre (~127 vis pour 13 blocs, ~107 pour 11).
+- Perçages fraisés pour **vis M4×30 Torx T20** en vis-à-vis des taraudages du cadre (~110 vis).
 - Vitre **feuilletée extra-claire 66.2 (13 mm)**, bords polis, dimensions = ouverture de battée − 2 mm de jeu par côté. Collée dans la battée au **silicone structurel** (2 mm de fond + flanc, bande 30 mm), dépouillée de tout contact verre/métal.
 - Cadre visible depuis l'extérieur : 60 mm (talon + battée). L'artiste souhaite le minimum : signaler toute possibilité de réduire à 50.
 
@@ -36,10 +36,9 @@ Base : principe constructif arrêté (site Les Veilleurs, section « Étude cons
 2. `caisson.dxf` (développé de la tôle pliée) + `caisson.pdf` coté.
 3. `longeron.dxf` (profil) + nomenclature des 4 longueurs.
 4. `vitre.dxf` (cotes finies, bords polis).
-5. Tableau de masses (caisson, couvercle, blocs, total) — ordre de grandeur attendu ≈ 400 kg chargé.
+5. Tableau de masses (caisson, couvercle, blocs, total) — ordre de grandeur attendu ≈ 350 kg chargé.
 
 ## 6. Points à trancher avant mise au net
-- 13 ou 11 blocs par banc (toutes les longueurs en dépendent).
 - Toron plein (30 %) ou creux (50 %).
 - Fond noir : verre laqué ou mousse noire seule.
 - Torx standard ou inviolable (TR).
