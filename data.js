@@ -1,14 +1,15 @@
 // Vitrine « aquarium » des cristaux — données du site (édition : modifier ce fichier, index.html ne change pas)
 window.DATA = {
-  version: "0.1",
+  version: "0.2",
   date: "25-09-2026",
   titre: "Vitrine « aquarium » des cristaux",
   sous_titre: "Les Veilleurs · Eva L'Hoest / EHlab · Beaufort 27, Westende — dossier de construction",
   contexte: {
-    texte: "Une niche métallique étanche fermée par une vitre, où 33 ou 39 blocs de cristal K9 gravés (200 × 100 × 100 mm, ≈ 5 kg chacun) sont présentés sur fond noir, sous azote sec, éclairés par une seule rampe LED. Le caisson est livré vide, noyé dans le socle monobloc ; les cristaux sont posés sur place. Tout se démonte et s'entretient depuis une chambre de visite arrière.",
+    texte: "Une niche métallique étanche fermée par une vitre, où 33 blocs de cristal K9 gravés (200 × 100 × 100 mm, ≈ 5 kg chacun) sont présentés sur fond noir, sous azote sec, éclairés par une seule rampe LED. Le caisson est livré vide, noyé dans le socle monobloc ; les cristaux sont posés sur place. Tout se démonte et s'entretient depuis une chambre de visite arrière.",
     vues: [
       {src:"docs/plans/01_coupe_verticale.png", legende:"Coupe verticale de principe"},
-      {src:"docs/plans/03_face_et_plan.png", legende:"Vue de face et plan cotés (variante 3 × 13)"},
+      {src:"docs/plans/03_face_et_plan.png", legende:"Vue de face et plan cotés (3 × 11 blocs)"},
+      {src:"docs/plans/06_caisson_vues.png", legende:"Caisson soudé : vue arrière et vue de dessus"},
       {src:"docs/plans/02_detail_serrage.png", legende:"Détail du serrage périphérique"}
     ]
   },
@@ -20,14 +21,14 @@ window.DATA = {
     {t:"Recette", d:"−0,2 bar tenu 24 h avec perte < 50 mbar : en atelier à blanc, puis sur site après chargement."}
   ],
   dimensions: {
-    colonnes:["", "3 × 13 blocs", "3 × 11 blocs"],
+    colonnes:["Élément", "Cote (3 × 11 blocs — arrêté le 25-09-26)"],
     lignes:[
-      ["Blocs","39 — ≈ 196 kg","33 — ≈ 166 kg"],
-      ["Cavité utile L × H × P","2 604 × 333 × 120","2 204 × 333 × 120"],
-      ["Hors cadre (visible)","2 724 × 453","2 324 × 453"],
-      ["Vitre 66.2","≈ 2 620 × 350 — ≈ 30 kg","≈ 2 220 × 350 — ≈ 25 kg"],
-      ["Vis M4 (pas 50)","≈ 127","≈ 107"],
-      ["Masse chargée","≈ 400 kg","≈ 350 kg"]
+      ["Blocs","33 × (200 × 100 × 100) — ≈ 166 kg"],
+      ["Cavité utile L × H × P","2 204 × 333 × 120"],
+      ["Caisson / cadre visible","2 324 × 453 × ~135 — cadre 60 mm"],
+      ["Vitre 66.2","≈ 2 264 × 393 × 13 — ≈ 29 kg"],
+      ["Vis M4 (pas 50)","≈ 110"],
+      ["Masse chargée","≈ 350 kg"]
     ],
     note:"Profondeur utile 120 = bloc 100 + mousse comprimée 8 + réserve 4 pour le fond noir + jeu. Le couvercle ajoute 24 mm devant le cadre."
   },
@@ -59,7 +60,6 @@ window.DATA = {
     ["Rampe LED 3 W 3000 K IP67 + câble","lot éclairage solaire"]
   ],
   points_ouverts: [
-    "13 ou 11 blocs par banc — conditionne toutes les longueurs (Eva + plans du socle de Jacky).",
     "Fond noir : verre laqué noir 4 mm ou mousse silicone noire seule — échantillon à juger avec Eva.",
     "Toron plein (30 %) ou creux (50 %) ; Torx standard ou inviolable.",
     "Cadre visible 60 mm — l'atelier peut proposer 50 si la battée le permet.",
@@ -67,17 +67,19 @@ window.DATA = {
     "Cote d'épaulement pierre devant le cadre — à caler sur « base mono bloc V00 »."
   ],
   documents: [
-    {n:"Note de principe v01 (PDF, 4 pages)", u:"docs/note_aquarium_v01.pdf"},
+    {n:"Dossier de consultation v02 (PDF, 5 pages) — pour avis d'atelier et estimation de prix", u:"docs/consultation_aquarium_v02.pdf"},
+    {n:"Note de principe v01 (PDF, 4 pages — variante 13 blocs, historique)", u:"docs/note_aquarium_v01.pdf"},
     {n:"Brief CAO pour Jacky (Markdown)", u:"docs/brief_cao_jacky.md"},
     {n:"Séquence de montage et essais (Markdown)", u:"docs/sequence_montage_essais.md"},
     {n:"Étude constructive initiale : DXF caisson / longeron / vitre, STEP, dessins (site principal, mdp EVA)", u:"https://veilleurs-xi.vercel.app"},
     {n:"Dossier du socle monobloc", u:"https://base-les-veilleurs.vercel.app"}
   ],
   prompt_cao: `Tu es un dessinateur CAO. À partir du brief ci-dessous, produis les plans cotés (3 vues + coupes AA/BB + éclaté) et les fichiers STEP/DXF de la vitrine « aquarium » des cristaux.
-Cavité utile 2 604 × 333 × 120 mm (variante 2 204 pour 11 blocs). Caisson tôle 316L 3 mm pliée en U, flasques soudées, cornières 40×40×4 extérieures, cadre plat 60×10 taraudé M4 (axe à 15 du bord, pas 50), gorge 11×2 à 44,5 du bord. Couvercle : 4 longerons 60×24 à battée 32×19, vitre 66.2 (13 mm) collée en battée, vis M4×30 fraisées Torx. Deux piquages Ø10 en paroi arrière haute aux extrémités. Livrables : aquarium_ensemble.step/pdf, caisson.dxf (développé), longeron.dxf, vitre.dxf, tableau des masses.`,
+Cavité utile 2 204 × 333 × 120 mm (33 blocs en 3 × 11). Caisson tôle 316L 3 mm pliée en U, flasques soudées, cornières 40×40×4 extérieures, cadre plat 60×10 taraudé M4 (axe à 15 du bord, pas 50), gorge 11×2 à 44,5 du bord. Couvercle : 4 longerons 60×24 à battée 32×19, vitre 66.2 (13 mm) collée en battée, vis M4×30 fraisées Torx. Deux piquages Ø10 en paroi arrière haute aux extrémités. Livrables : aquarium_ensemble.step/pdf, caisson.dxf (développé), longeron.dxf, vitre.dxf, tableau des masses.`,
   journal: [
     {d:"22-09-2026", t:"Dictée du principe « aquarium basculé » par Pierre ; première coupe et dimensionnement 3 × 13 (fil « Dossier technique architectural »)."},
     {d:"sept. 2026", t:"Étude constructive publiée sur le site principal : tôle pliée, longerons à battée, 104 vis, DXF/STEP ; vide écarté au profit de l'azote sec ; une seule rampe LED."},
-    {d:"25-09-2026", t:"v0.1 — dossier de construction dédié : note de principe v01, cinq dessins, brief CAO, séquence de montage et essais, site."}
+    {d:"25-09-2026", t:"v0.1 — dossier de construction dédié : note de principe v01, cinq dessins, brief CAO, séquence de montage et essais, site ; dépôt GitHub PLHFak/Aquarium-K9."},
+    {d:"25-09-2026", t:"v0.2 — 3 × 11 blocs arrêté (33). Dossier de consultation v02 pour menuiserie métallique inox : description pièce par pièce, nomenclature, lots à chiffrer, questions d'atelier ; dessins 06 (caisson) et 07 (profil longeron)."}
   ]
 };
