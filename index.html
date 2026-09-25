@@ -1,49 +1,55 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
 <title>Vitrine « aquarium » des cristaux — Les Veilleurs</title>
-<style>
-:root{--bg:#f4f0e8;--ink:#2b2b2b;--acc:#5a7d8c;--mute:#7a7a7a;--line:#d9d2c3;--card:#fbf9f4}
-*{box-sizing:border-box}body{margin:0;font:16px/1.55 Georgia,"Times New Roman",serif;color:var(--ink);background:var(--bg)}
-header{padding:40px 20px 24px;max-width:960px;margin:0 auto}h1{font-size:30px;margin:0 0 4px;font-weight:normal}
-.sub{color:var(--mute);font-size:14px}nav{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
-nav ul{list-style:none;margin:0 auto;padding:10px 20px;max-width:960px;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px}
-nav a{color:var(--acc);text-decoration:none}main{max-width:960px;margin:0 auto;padding:10px 20px 60px}
-section{padding:26px 0;border-bottom:1px solid var(--line)}h2{font-weight:normal;font-size:22px;color:var(--acc);margin:0 0 12px}
-h3{font-size:16px;margin:14px 0 4px}p{margin:8px 0}img{max-width:100%;display:block;border:1px solid var(--line);background:#fff;margin:10px 0 4px}
-.leg{font-size:13px;color:var(--mute)}table{border-collapse:collapse;width:100%;font-size:14px;margin:10px 0}
-td,th{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}th{background:#e8e2d4;font-weight:normal}
-ul.pts li{margin:6px 0}details{background:var(--card);border:1px solid var(--line);padding:10px 14px;margin:10px 0}summary{cursor:pointer;color:var(--acc)}
-pre{white-space:pre-wrap;font:13px/1.45 ui-monospace,Menlo,monospace;background:var(--card);border:1px solid var(--line);padding:12px}
-footer{max-width:960px;margin:0 auto;padding:20px;font-size:13px;color:var(--mute)}
-#gate{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:10}
-#gate form{text-align:center}#gate input{font-size:18px;padding:8px 12px;border:1px solid var(--line);border-radius:4px}
-#gate button{font-size:16px;padding:8px 14px;margin-left:6px}.journal li{margin:6px 0}.journal b{color:var(--acc);font-weight:normal;margin-right:8px}
-</style></head><body>
-<div id="gate"><form onsubmit="return gate(event)"><p>Code d'accès</p><input id="code" type="password" autofocus><button>Entrer</button></form></div>
-<header><h1 id="titre"></h1><div class="sub" id="sous"></div></header>
-<nav><ul>
-<li><a href="#contexte">Contexte</a></li><li><a href="#principe">Principe</a></li><li><a href="#dimensions">Dimensions</a></li>
-<li><a href="#montage">Montage & essais</a></li><li><a href="#fournitures">Fournitures</a></li><li><a href="#ouverts">Points ouverts</a></li>
-<li><a href="#documents">Documents</a></li><li><a href="#cao">Prompt CAO</a></li><li><a href="#journal">Journal</a></li></ul></nav>
-<main id="main"></main>
+<link rel="stylesheet" href="lv.css">
+</head>
+<body>
+<div id="gate"></div>
+<div id="topbar"></div>
+<header id="hdr"></header>
+<nav id="nav"></nav>
+<main>
+  <section id="contexte"></section>
+  <section id="principe"></section>
+  <section id="dimensions"></section>
+  <section id="montage"></section>
+  <section id="fournitures"></section>
+  <section id="ouverts"></section>
+  <section id="documents"></section>
+  <section id="cao"></section>
+  <section id="journal"></section>
+</main>
 <footer id="foot"></footer>
+<script src="docs/sizes.js"></script>
 <script src="data.js"></script>
+<script src="lv.js"></script>
 <script>
-function gate(e){e.preventDefault();if(document.getElementById('code').value.trim().toUpperCase()==='EVA'){document.getElementById('gate').remove();sessionStorage.setItem('aq','1')}else{document.getElementById('code').value=''}return false}
-const qc=new URLSearchParams(location.search).get('code');if(qc&&qc.toUpperCase()==='EVA'){sessionStorage.setItem('aq','1');history.replaceState(null,'',location.pathname)}
-if(sessionStorage.getItem('aq')==='1')document.getElementById('gate').remove();
-const D=window.DATA,$=(h)=>h;
-document.getElementById('titre').textContent=D.titre;document.getElementById('sous').textContent=D.sous_titre;
-let h='';
-h+=`<section id="contexte"><h2>Contexte</h2><p>${D.contexte.texte}</p>${D.contexte.vues.map(v=>`<img src="${v.src}" alt="${v.legende}"><div class="leg">${v.legende}</div>`).join('')}</section>`;
-h+=`<section id="principe"><h2>Principe constructif</h2>${D.principe.map(p=>`<h3>${p.t}</h3><p>${p.d}</p>${p.img?`<img src="${p.img}">`:''}`).join('')}</section>`;
-h+=`<section id="dimensions"><h2>Dimensions</h2><table><tr>${D.dimensions.colonnes.map(c=>`<th>${c}</th>`).join('')}</tr>${D.dimensions.lignes.map(l=>`<tr>${l.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table><p class="leg">${D.dimensions.note}</p></section>`;
-h+=`<section id="montage"><h2>Séquence de montage et essais</h2><img src="${D.montage.img}"><table><tr><th>#</th><th>Étape</th><th>Contenu</th><th>Contrôle</th></tr>${D.montage.etapes.map((e,i)=>`<tr><td>${i+1}</td><td>${e[0]}</td><td>${e[1]}</td><td>${e[2]}</td></tr>`).join('')}</table><details><summary>Entretien</summary><p>${D.montage.entretien}</p></details></section>`;
-h+=`<section id="fournitures"><h2>Fournitures et filières</h2><table><tr><th>Fourniture</th><th>Filière</th></tr>${D.fournitures.map(f=>`<tr><td>${f[0]}</td><td>${f[1]}</td></tr>`).join('')}</table></section>`;
-h+=`<section id="ouverts"><h2>Points ouverts</h2><ul class="pts">${D.points_ouverts.map(p=>`<li>${p}</li>`).join('')}</ul></section>`;
-h+=`<section id="documents"><h2>Documents</h2><ul class="pts">${D.documents.map(d=>`<li><a href="${d.u}">${d.n}</a></li>`).join('')}</ul></section>`;
-h+=`<section id="cao"><h2>Prompt CAO (pour Jacky ou une IA de dessin)</h2><pre>${D.prompt_cao}</pre></section>`;
-h+=`<section id="journal"><h2>Journal</h2><ul class="journal">${D.journal.map(j=>`<li><b>${j.d}</b>${j.t}</li>`).join('')}</ul></section>`;
-document.getElementById('main').innerHTML=h;
-document.getElementById('foot').innerHTML=`<b>LES VEILLEURS — Beaufort 27</b> · v${D.version} · ${D.date} · <a href="https://aquarium-k9.vercel.app">aquarium-k9.vercel.app</a><br>Artiste · Maître d'œuvre : Eva L'Hoest · eva.lhoest@gmail.com · +32 495 57 92 12<br>Assistant électromécanique : Gioacchino Miceli · gioacchino.miceli@thefaktory.com · +32 497 84 45 10<br>© Eva L'Hoest 2026 — Confidentiel. Reproduction, diffusion ou usage hors de cette consultation interdits sans accord écrit de l'artiste. Cotes non contractuelles.`;
-</script></body></html>
+LV.init(window.DATA, "aquarium", ({t, esc}) => {
+  const D = window.DATA, $ = s => document.querySelector(s);
+  const img = (src, alt) => `<a href="${esc(src)}" target="_blank" rel="noopener"><img src="${esc(src)}" alt="${esc(alt||"")}" loading="lazy"></a>`;
+
+  $("#contexte").innerHTML = `<h2>${esc(t(D.contexte.titre))}</h2><p>${esc(t(D.contexte.texte))}</p>
+    <div class="vues">${D.contexte.vues.map(v => `<div class="vue">${img(v.src, t(v.legende))}<div class="body"><p>${esc(t(v.legende))}</p></div></div>`).join("")}</div>`;
+
+  $("#principe").innerHTML = `<h2>${esc(t(D.principe.titre))}</h2>` + D.principe.items.map(p => `<h3>${esc(t(p.t))}</h3><p>${esc(t(p.d))}</p>${p.img ? img(p.img, t(p.t)) : ""}`).join("");
+
+  const dm = D.dimensions;
+  $("#dimensions").innerHTML = `<h2>${esc(t(dm.titre))}</h2><div class="scroll"><table><tr>${dm.colonnes.map(c => `<th>${esc(t(c))}</th>`).join("")}</tr>${dm.lignes.map(l => `<tr>${l.map(c => `<td>${esc(t(c))}</td>`).join("")}</tr>`).join("")}</table></div><p class="leg">${esc(t(dm.note))}</p>`;
+
+  const m = D.montage;
+  $("#montage").innerHTML = `<h2>${esc(t(m.titre))}</h2>${img(m.img, t(m.titre))}<div class="scroll"><table><tr><th>#</th>${m.colonnes.map(c => `<th>${esc(t(c))}</th>`).join("")}</tr>${m.etapes.map((e, i) => `<tr><td>${i + 1}</td>${e.map(c => `<td>${esc(t(c))}</td>`).join("")}</tr>`).join("")}</table></div><details><summary>${esc(t(m.entretien_t))}</summary><p>${esc(t(m.entretien))}</p></details>`;
+
+  const f = D.fournitures;
+  $("#fournitures").innerHTML = `<h2>${esc(t(f.titre))}</h2><div class="scroll"><table><tr>${f.colonnes.map(c => `<th>${esc(t(c))}</th>`).join("")}</tr>${f.lignes.map(l => `<tr>${l.map(c => `<td>${esc(t(c))}</td>`).join("")}</tr>`).join("")}</table></div>`;
+
+  $("#ouverts").innerHTML = `<h2>${esc(t(D.points_ouverts.titre))}</h2><ul class="pts">${D.points_ouverts.items.map(p => `<li>${esc(t(p))}</li>`).join("")}</ul>`;
+
+  $("#cao").innerHTML = `<h2>${esc(t(D.cao.titre))}</h2><p class="leg">${esc(t(D.cao.note))}</p><pre id="prompt">${esc(D.cao.texte)}</pre><button class="copy" data-src="prompt"></button>`;
+});
+</script>
+</body>
+</html>

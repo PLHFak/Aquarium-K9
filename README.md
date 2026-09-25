@@ -1,12 +1,23 @@
 # Vitrine « aquarium » des cristaux — Les Veilleurs
 
-Dossier de construction de la niche métallique des cristaux K9 (site statique, même modèle que `Base_les_veilleurs` et `Vitrine_lenticulaire`).
+Dossier de construction de la niche métallique des cristaux K9 (site statique).
 
-- `index.html` — page (ne pas modifier pour le contenu)
 - `data.js` — tout le contenu : contexte, principe, dimensions, montage, fournitures, points ouverts, documents, prompt CAO, journal
-- `docs/` — note de principe v01 (PDF), brief CAO, séquence de montage, dessins (`docs/plans/`)
+- `docs/` — consultation v02 (FR / AG / ND / DE), note de principe v01, dessins (`docs/plans/`, PDF cartouchés dans `docs/pdf/`), brief CAO
 - `vercel.json` — déploiement Vercel (preset Other), noindex
 
-Site : https://aquarium-k9.vercel.app (déploiement Vercel automatique à chaque push).
+Site : https://aquarium-k9.vercel.app (déploiement Vercel automatique à chaque push). Lien direct : https://aquarium-k9.vercel.app/?code=EVA
 
-Lien direct à transmettre : https://aquarium-k9.vercel.app/?code=EVA (le code passe dans le lien). Code d'accès de la page : `EVA` (côté client, dans `index.html`, fonction `gate`).
+## Charte commune aux trois dossiers
+
+Les trois sites (`Base_les_veilleurs`, `Vitrine_lenticulaire`, `Aquarium-K9`) partagent le même gabarit :
+
+- `lv.css` et `lv.js` — styles, barre de titre (liens vers les trois dossiers, onglets de langue), cartouche technique, cartes « Documents ». **Ces deux fichiers doivent rester identiques dans les trois dépôts** : toute modification se recopie dans les deux autres.
+- `data.js` — le seul fichier de contenu. Chaque texte est donné dans les quatre langues avec `L("fr","en","nl","de")` ; les schémas et plans restent légendés en français.
+- `index.html` — gabarit et rendu des sections propres au dossier (ne porte pas de contenu).
+- `build.py` — génère les vignettes (`docs/thumbs/`), les PDF avec cartouche des schémas (`docs/pdf/`), les PNG des plans (`docs/png/`) et `docs/sizes.js`. S'appuie sur `lv_build.py` (commun, identique dans les trois dépôts ; Pillow, reportlab, pdftoppm).
+
+Langue : onglets FR / EN / NL / DE en haut de page, ou `?lang=en` dans le lien ; le choix est mémorisé dans le navigateur.
+
+Accès : code `EVA` (côté client, `lv.js`), ou `?code=EVA` dans le lien. Pages en `noindex`.
+

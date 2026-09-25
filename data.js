@@ -1,98 +1,208 @@
-// Vitrine « aquarium » des cristaux — données du site (édition : modifier ce fichier, index.html ne change pas)
+// Vitrine « aquarium » des cristaux — données du site.
+// Seul ce fichier porte le contenu ; index.html, lv.css et lv.js sont communs aux trois dossiers.
+// Chaque texte est donné dans les quatre langues : L("fr", "en", "nl", "de"). Les schémas restent légendés en français.
+const L = (fr, en, nl, de) => ({fr, en, nl, de});
+
 window.DATA = {
-  version: "0.7",
+  version: "0.8",
   date: "25-09-2026",
-  titre: "Vitrine « aquarium » des cristaux",
-  sous_titre: "Les Veilleurs · Eva L'Hoest · Beaufort 27 — dossier de construction",
+  titre: L("Vitrine « aquarium » des cristaux", "Crystal “aquarium” showcase", "Kristallen “aquarium”-vitrine", "Kristall-Vitrine „Aquarium“"),
+  sous_titre: L("Les Veilleurs · Eva L'Hoest · Beaufort 27 — dossier de construction", "Les Veilleurs · Eva L'Hoest · Beaufort 27 — construction file", "Les Veilleurs · Eva L'Hoest · Beaufort 27 — bouwdossier", "Les Veilleurs · Eva L'Hoest · Beaufort 27 — Baudossier"),
+  cartouche: {
+    num: "LV-AQ-WEB-01", statut: "CONSULTATION", genere: "25-09-2026 04:01",
+    objet: L("Caisson inox, couvercle vitré, joint et azote sec — dossier de construction et de consultation", "Stainless casing, glazed lid, seal and dry nitrogen — construction and tender file", "Roestvrijstalen kast, beglaasd deksel, dichting en droge stikstof — bouw- en consultatiedossier", "Edelstahlkasten, verglaster Deckel, Dichtung und trockener Stickstoff — Bau- und Ausschreibungsdossier"),
+    url: "https://aquarium-k9.vercel.app", repo: "github.com/PLHFak/Aquarium-K9"
+  },
+  nav: [
+    {id:"contexte", label:L("Contexte","Context","Context","Kontext")},
+    {id:"principe", label:L("Principe","Principle","Principe","Prinzip")},
+    {id:"dimensions", label:L("Dimensions","Dimensions","Afmetingen","Abmessungen")},
+    {id:"montage", label:L("Montage & essais","Assembly & tests","Montage & proeven","Montage & Prüfungen")},
+    {id:"fournitures", label:L("Fournitures","Supplies","Leveringen","Lieferungen")},
+    {id:"ouverts", label:L("Points ouverts","Open points","Open punten","Offene Punkte")},
+    {id:"documents", label:L("Documents","Documents","Documenten","Dokumente")},
+    {id:"cao", label:L("Prompt CAO","CAD prompt","CAD-prompt","CAD-Prompt")},
+    {id:"journal", label:L("Journal","Log","Logboek","Protokoll")}
+  ],
+
   contexte: {
-    texte: "Une niche métallique étanche fermée par une vitre, où 33 blocs de cristal K9 gravés (200 × 100 × 100 mm, ≈ 5 kg chacun) sont présentés sur fond noir, sous azote sec, éclairés en option par une rampe LED en haut de la boîte. Le caisson est livré vide, noyé dans le socle monobloc ; les cristaux sont posés sur place. Tout se démonte et s'entretient depuis une chambre de visite arrière.",
+    titre: L("Contexte","Context","Context","Kontext"),
+    texte: L(
+      "Une niche métallique étanche fermée par une vitre, où 33 blocs de cristal K9 gravés (200 × 100 × 100 mm, ≈ 5 kg chacun) sont présentés sur fond noir, sous azote sec, éclairés en option par une rampe LED en haut de la boîte. Le caisson est livré vide, noyé dans le socle monobloc ; les cristaux sont posés sur place. Tout se démonte et s'entretient depuis une chambre de visite arrière.",
+      "A sealed metal niche closed by a glass pane, in which 33 engraved K9 crystal blocks (200 × 100 × 100 mm, ≈ 5 kg each) are displayed against a black background under dry nitrogen, optionally lit by an LED strip at the top of the box. The casing is delivered empty and cast into the monolithic base; the crystals are placed on site. Everything can be dismantled and serviced from a rear inspection chamber.",
+      "Een luchtdichte metalen nis, afgesloten met een glasplaat, waarin 33 gegraveerde K9-kristalblokken (200 × 100 × 100 mm, ≈ 5 kg per stuk) op een zwarte achtergrond onder droge stikstof worden getoond, optioneel verlicht door een ledstrip bovenin de kast. De kast wordt leeg geleverd en ingestort in de monolithische sokkel; de kristallen worden ter plaatse geplaatst. Alles is demonteerbaar en onderhoudbaar via een inspectiekamer aan de achterzijde.",
+      "Eine dichte Metallnische mit Glasscheibe, in der 33 gravierte K9-Kristallblöcke (200 × 100 × 100 mm, je ≈ 5 kg) vor schwarzem Hintergrund unter trockenem Stickstoff gezeigt werden, optional von einer LED-Leiste oben im Kasten beleuchtet. Der Kasten wird leer geliefert und in den monolithischen Sockel eingegossen; die Kristalle werden vor Ort eingesetzt. Alles ist von einer rückseitigen Revisionskammer aus demontier- und wartbar."),
     vues: [
-      {src:"docs/plans/01_coupe_verticale.png", legende:"Coupe verticale de principe"},
-      {src:"docs/plans/03_face_et_plan.png", legende:"Vue de face et plan cotés (3 × 11 blocs)"},
-      {src:"docs/plans/06_caisson_vues.png", legende:"Caisson soudé : vue arrière et vue de dessus"},
-      {src:"docs/plans/3D_1_eclate_avant.png", legende:"Vue 3D éclatée depuis l'avant"},
-      {src:"docs/plans/3D_2_eclate_arriere.png", legende:"Vue 3D éclatée depuis l'arrière"},
-      {src:"docs/plans/3D_4_detail_angle.png", legende:"Détail d'angle éclaté : cadre, toron, longeron, vitre, vis"},
-      {src:"docs/plans/3D_3_assemble.png", legende:"Ensemble assemblé"},
-      {src:"docs/plans/02_detail_serrage.png", legende:"Détail du serrage périphérique"}
+      {src:"docs/plans/01_coupe_verticale.png", legende:L("Coupe verticale de principe","Vertical section, principle","Verticale principedoorsnede","Vertikalschnitt, Prinzip")},
+      {src:"docs/plans/03_face_et_plan.png", legende:L("Vue de face et plan cotés (3 × 11 blocs)","Dimensioned front view and plan (3 × 11 blocks)","Gemaatvoerd vooraanzicht en plattegrond (3 × 11 blokken)","Bemaßte Ansicht und Grundriss (3 × 11 Blöcke)")},
+      {src:"docs/plans/06_caisson_vues.png", legende:L("Caisson soudé : vue arrière et vue de dessus","Welded casing: rear and top views","Gelaste kast: achter- en bovenaanzicht","Geschweißter Kasten: Rück- und Draufsicht")},
+      {src:"docs/plans/3D_1_eclate_avant.png", legende:L("Vue 3D éclatée depuis l'avant","Exploded 3D view from the front","Geëxplodeerd 3D-zicht van voren","Explosionsansicht 3D von vorn")},
+      {src:"docs/plans/3D_2_eclate_arriere.png", legende:L("Vue 3D éclatée depuis l'arrière","Exploded 3D view from the rear","Geëxplodeerd 3D-zicht van achteren","Explosionsansicht 3D von hinten")},
+      {src:"docs/plans/3D_4_detail_angle.png", legende:L("Détail d'angle éclaté : cadre, toron, longeron, vitre, vis","Exploded corner detail: frame, cord, rail, glass, screws","Geëxplodeerd hoekdetail: kader, koord, ligger, glas, schroeven","Explosionsdetail Ecke: Rahmen, Rundschnur, Leiste, Glas, Schrauben")},
+      {src:"docs/plans/3D_3_assemble.png", legende:L("Ensemble assemblé","Assembled unit","Gemonteerd geheel","Zusammengebaut")},
+      {src:"docs/plans/02_detail_serrage.png", legende:L("Détail du serrage périphérique","Peripheral clamping detail","Detail van de omtrekklemming","Detail der umlaufenden Klemmung")}
     ]
   },
-  principe: [
-    {t:"Caisson", d:"Tôle 316L 3 mm pliée en U, flasques soudées en cordon continu, cornières 40×40×4 à l'extérieur (cavité lisse), cadre avant plat 60×10 taraudé M4, dressé après soudage."},
-    {t:"Couvercle monobloc", d:"Vitre feuilletée extra-claire 66.2 (13 mm), couche antireflet sur la face extérieure, posée sans collage dans la battée 32×19 de longerons 60×24, sur une bande caoutchouc autocollante de ~1 mm × 30 mm. Le talon du longeron vient en butée sur le cadre et calibre l'écrasement du toron EPDM Ø10 à ~30 %. Aucune vis dans le verre."},
-    {t:"Plaquage des blocs", d:"Mousse silicone cellules fermées (12 → 8 mm) au fond : les blocs s'appuient sur la vitre, sans lame d'air ni double réflexion. Fond noir : verre laqué ou mousse noire, à trancher sur échantillon."},
-    {t:"Atmosphère", d:"Azote sec à pression ambiante par deux tubes Ø10 ramenés en chambre de visite : robinets, valve Schrader, dessiccant, vessie d'équilibrage ~1 L, témoin d'humidité. Le vide est écarté.", img:"docs/plans/04_circuit_gaz.png"},
-    {t:"Recette", d:"−0,2 bar tenu 24 h avec perte < 50 mbar : en atelier à blanc, puis sur site après chargement."}
-  ],
+
+  principe: {
+    titre: L("Principe constructif","Construction principle","Constructieprincipe","Konstruktionsprinzip"),
+    items: [
+      {t:L("Caisson","Casing","Kast","Kasten"), d:L(
+        "Tôle 316L 3 mm pliée en U, flasques soudées en cordon continu, cornières 40×40×4 à l'extérieur (cavité lisse), cadre avant plat 60×10 taraudé M4, dressé après soudage.",
+        "3 mm 316L sheet bent into a U, end plates welded with a continuous seam, 40×40×4 angles on the outside (smooth cavity), flat front frame 60×10 tapped M4, faced after welding.",
+        "3 mm 316L-plaat in U geplooid, eindflenzen doorlopend gelast, hoekprofielen 40×40×4 aan de buitenzijde (gladde holte), vlak voorkader 60×10 met M4-tapgaten, na het lassen vlakgefreesd.",
+        "3-mm-Blech 316L U-förmig gekantet, Stirnflansche durchgehend geschweißt, Winkel 40×40×4 außen (glatter Hohlraum), flacher Frontrahmen 60×10 mit M4-Gewinde, nach dem Schweißen plangefräst.")},
+      {t:L("Couvercle monobloc","One-piece lid","Eendelig deksel","Einteiliger Deckel"), d:L(
+        "Vitre feuilletée extra-claire 66.2 (13 mm), couche antireflet sur la face extérieure, posée sans collage dans la battée 32×19 de longerons 60×24, sur une bande caoutchouc autocollante de ~1 mm × 30 mm. Le talon du longeron vient en butée sur le cadre et calibre l'écrasement du toron EPDM Ø10 à ~30 %. Aucune vis dans le verre.",
+        "Extra-clear laminated glass 66.2 (13 mm), anti-reflective coating on the outer face, laid without adhesive in the 32×19 rebate of 60×24 rails, on a self-adhesive rubber strip ~1 mm × 30 mm. The rail heel butts against the frame and sets the compression of the Ø10 EPDM cord at ~30 %. No screw goes through the glass.",
+        "Extra-helder gelaagd glas 66.2 (13 mm), antireflectielaag op de buitenzijde, zonder lijm in de sponning 32×19 van liggers 60×24 gelegd, op een zelfklevende rubberband van ~1 mm × 30 mm. De hiel van de ligger stuit tegen het kader en bepaalt de samendrukking van het EPDM-koord Ø10 op ~30 %. Geen schroef door het glas.",
+        "Extraklares Verbundglas 66.2 (13 mm), Antireflexschicht auf der Außenseite, klebstofffrei in den Falz 32×19 der Leisten 60×24 auf ein selbstklebendes Gummiband ~1 mm × 30 mm gelegt. Der Absatz der Leiste läuft am Rahmen an und begrenzt die Verpressung der EPDM-Rundschnur Ø10 auf ~30 %. Keine Schraube im Glas.")},
+      {t:L("Plaquage des blocs","Pressing the blocks","Aandrukken van de blokken","Andrücken der Blöcke"), d:L(
+        "Mousse silicone cellules fermées (12 → 8 mm) au fond : les blocs s'appuient sur la vitre, sans lame d'air ni double réflexion. Fond noir : verre laqué ou mousse noire, à trancher sur échantillon.",
+        "Closed-cell silicone foam (12 → 8 mm) at the back: the blocks bear against the glass, with no air gap or double reflection. Black background: lacquered glass or black foam, to be decided on a sample.",
+        "Gesloten-cellig siliconeschuim (12 → 8 mm) achterin: de blokken steunen tegen het glas, zonder luchtspouw of dubbele reflectie. Zwarte achtergrond: gelakt glas of zwart schuim, te beslissen op staal.",
+        "Geschlossenzelliger Silikonschaum (12 → 8 mm) am Boden: Die Blöcke liegen an der Scheibe an, ohne Luftspalt und Doppelreflexion. Schwarzer Hintergrund: lackiertes Glas oder schwarzer Schaum, anhand eines Musters zu entscheiden.")},
+      {t:L("Atmosphère","Atmosphere","Atmosfeer","Atmosphäre"), d:L(
+        "Azote sec à pression ambiante par deux tubes Ø10 ramenés en chambre de visite : robinets, valve Schrader, dessiccant, vessie d'équilibrage ~1 L, témoin d'humidité. Le vide est écarté.",
+        "Dry nitrogen at ambient pressure through two Ø10 tubes brought to the inspection chamber: valves, Schrader valve, desiccant, ~1 L balancing bladder, humidity indicator. Vacuum is ruled out.",
+        "Droge stikstof op omgevingsdruk via twee buizen Ø10 naar de inspectiekamer: kranen, Schraderventiel, droogmiddel, vereffeningsblaas ~1 L, vochtindicator. Vacuüm is uitgesloten.",
+        "Trockener Stickstoff bei Umgebungsdruck über zwei Rohre Ø10 zur Revisionskammer: Hähne, Schrader-Ventil, Trockenmittel, Ausgleichsblase ~1 L, Feuchteindikator. Vakuum ist ausgeschlossen."), img:"docs/plans/04_circuit_gaz.png"},
+      {t:L("Recette","Acceptance test","Oplevering","Abnahme"), d:L(
+        "−0,2 bar tenu 24 h avec perte < 50 mbar : en atelier à blanc, puis sur site après chargement.",
+        "−0.2 bar held for 24 h with a loss < 50 mbar: empty in the workshop, then on site after loading.",
+        "−0,2 bar gedurende 24 u met verlies < 50 mbar: leeg in het atelier, daarna ter plaatse na het laden.",
+        "−0,2 bar über 24 h mit Verlust < 50 mbar: leer in der Werkstatt, dann vor Ort nach der Bestückung.")}
+    ]
+  },
+
   dimensions: {
-    colonnes:["Élément", "Cote (3 × 11 blocs — arrêté le 25-09-26)"],
+    titre: L("Dimensions","Dimensions","Afmetingen","Abmessungen"),
+    colonnes:[L("Élément","Item","Element","Element"), L("Cote (3 × 11 blocs — arrêté le 25-09-26)","Dimension (3 × 11 blocks — fixed on 25-09-26)","Maat (3 × 11 blokken — vastgelegd op 25-09-26)","Maß (3 × 11 Blöcke — festgelegt am 25-09-26)")],
     lignes:[
-      ["Blocs","33 × (200 × 100 × 100) — ≈ 166 kg"],
-      ["Cavité utile L × H × P","2 204 × 333 × ~106 (blocs affleurant la vitre)"],
-      ["Niche dans la pierre","battée ≈ 64 × 32 sur le pourtour, face de pierre affleurant la vitre"],
-      ["Caisson / cadre visible","2 324 × 453 × ~138 — cadre 60 mm"],
-      ["Vitre feuilletée extra-claire 66.2, antireflet face ext.","≈ 2 264 × 393 × 13 — ≈ 29 kg"],
-      ["Vis M4 (pas 50)","≈ 110"],
-      ["Masse chargée","≈ 350 kg"]
+      [L("Blocs","Blocks","Blokken","Blöcke"), "33 × (200 × 100 × 100) — ≈ 166 kg"],
+      [L("Cavité utile L × H × P","Usable cavity L × H × D","Nuttige holte L × H × D","Nutzhohlraum L × H × T"), L("2 204 × 333 × ~106 (blocs affleurant la vitre)","2,204 × 333 × ~106 (blocks flush with the glass)","2 204 × 333 × ~106 (blokken gelijk met het glas)","2 204 × 333 × ~106 (Blöcke bündig mit der Scheibe)")],
+      [L("Niche dans la pierre","Niche in the stone","Nis in de steen","Nische im Stein"), L("battée ≈ 64 × 32 sur le pourtour, face de pierre affleurant la vitre","rebate ≈ 64 × 32 all round, stone face flush with the glass","sponning ≈ 64 × 32 rondom, steenvlak gelijk met het glas","Falz ≈ 64 × 32 umlaufend, Steinfläche bündig mit der Scheibe")],
+      [L("Caisson / cadre visible","Casing / visible frame","Kast / zichtbaar kader","Kasten / sichtbarer Rahmen"), L("2 324 × 453 × ~138 — cadre 60 mm","2,324 × 453 × ~138 — 60 mm frame","2 324 × 453 × ~138 — kader 60 mm","2 324 × 453 × ~138 — Rahmen 60 mm")],
+      [L("Vitre feuilletée extra-claire 66.2, antireflet face ext.","Extra-clear laminated glass 66.2, AR outer face","Extra-helder gelaagd glas 66.2, antireflectie buitenzijde","Extraklares Verbundglas 66.2, AR-Außenseite"), "≈ 2 264 × 393 × 13 — ≈ 29 kg"],
+      [L("Vis M4 (pas 50)","M4 screws (pitch 50)","M4-schroeven (steek 50)","M4-Schrauben (Teilung 50)"), "≈ 110"],
+      [L("Masse chargée","Loaded mass","Massa geladen","Masse beladen"), "≈ 350 kg"]
     ],
-    note:"Profondeur ~106 = fond noir 4 + mousse comprimée 8 + bloc 100 ; les blocs dépassent de 6 mm la face du cadre et affleurent la vitre. Le longeron ajoute 29 mm ; la pierre affleure sa face."
+    note: L("Profondeur ~106 = fond noir 4 + mousse comprimée 8 + bloc 100 ; les blocs dépassent de 6 mm la face du cadre et affleurent la vitre. Le longeron ajoute 29 mm ; la pierre affleure sa face.",
+            "Depth ~106 = black back 4 + compressed foam 8 + block 100; the blocks protrude 6 mm beyond the frame face and are flush with the glass. The rail adds 29 mm; the stone is flush with its face.",
+            "Diepte ~106 = zwarte bodem 4 + samengedrukt schuim 8 + blok 100; de blokken steken 6 mm voorbij het kadervlak en liggen gelijk met het glas. De ligger voegt 29 mm toe; de steen ligt gelijk met zijn vlak.",
+            "Tiefe ~106 = schwarzer Boden 4 + verpresster Schaum 8 + Block 100; die Blöcke stehen 6 mm über die Rahmenfläche und liegen bündig mit der Scheibe. Die Leiste fügt 29 mm hinzu; der Stein liegt bündig mit deren Fläche.")
   },
+
   montage: {
+    titre: L("Séquence de montage et essais","Assembly sequence and tests","Montagevolgorde en proeven","Montageablauf und Prüfungen"),
     img:"docs/plans/05_sequence_montage.png",
+    colonnes:[L("Étape","Step","Stap","Schritt"), L("Contenu","Content","Inhoud","Inhalt"), L("Contrôle","Check","Controle","Prüfung")],
     etapes:[
-      ["Chaudronnerie","pliage U, flasques, cornières ext., cadre 60×10, tubes, dressage","planéité cadre ≤ 0,3 mm/m ; ressuage"],
-      ["Usinage","longerons à battée, gorge, perçages, angles","essai à blanc sur le caisson réel"],
-      ["Vitrerie","vitre 66.2 extra-claire posée en battée sur bande caoutchouc","aucun contact verre/métal"],
-      ["Essai atelier","couvercle vissé sans blocs, −0,2 bar","perte < 50 mbar / 24 h"],
-      ["Livraison socle","caisson vide, couvercle protégé, tubes obturés","position et niveau avant scellement"],
-      ["Chambre de visite","robinets, Schrader, dessiccant, vessie, témoin","étanchéité des raccords"],
-      ["Chargement site","fond noir, mousse, blocs banc par banc, cales, LED","anneaux de Newton à blanc"],
-      ["Fermeture","vissage en croix au couple, balayage azote 10 volumes","témoin d'humidité"],
-      ["Recette","−0,2 bar / 24 h puis pression ambiante + vessie","PV signé, consigne d'entretien"]
+      [L("Chaudronnerie","Sheet-metal work","Plaatwerk","Blechbearbeitung"), L("pliage U, flasques, cornières ext., cadre 60×10, tubes, dressage","U bending, end plates, outer angles, 60×10 frame, tubes, facing","U-plooien, flenzen, buitenhoekprofielen, kader 60×10, buizen, vlakfrezen","U-Kantung, Flansche, Außenwinkel, Rahmen 60×10, Rohre, Planfräsen"), L("planéité cadre ≤ 0,3 mm/m ; ressuage","frame flatness ≤ 0.3 mm/m; dye penetrant","vlakheid kader ≤ 0,3 mm/m; penetrantonderzoek","Rahmenebenheit ≤ 0,3 mm/m; Farbeindringprüfung")],
+      [L("Usinage","Machining","Verspaning","Zerspanung"), L("longerons à battée, gorge, perçages, angles","rebated rails, groove, drillings, corners","liggers met sponning, groef, boringen, hoeken","Leisten mit Falz, Nut, Bohrungen, Ecken"), L("essai à blanc sur le caisson réel","dry fit on the actual casing","passing op de echte kast","Probemontage am realen Kasten")],
+      [L("Vitrerie","Glazing","Beglazing","Verglasung"), L("vitre 66.2 extra-claire posée en battée sur bande caoutchouc","66.2 extra-clear glass laid in the rebate on rubber strip","extra-helder glas 66.2 in de sponning op rubberband","extraklares Glas 66.2 im Falz auf Gummiband"), L("aucun contact verre/métal","no glass/metal contact","geen glas/metaalcontact","kein Glas/Metall-Kontakt")],
+      [L("Essai atelier","Workshop test","Atelierproef","Werkstattprüfung"), L("couvercle vissé sans blocs, −0,2 bar","lid screwed on without blocks, −0.2 bar","deksel vastgeschroefd zonder blokken, −0,2 bar","Deckel ohne Blöcke verschraubt, −0,2 bar"), L("perte < 50 mbar / 24 h","loss < 50 mbar / 24 h","verlies < 50 mbar / 24 u","Verlust < 50 mbar / 24 h")],
+      [L("Livraison socle","Delivery to base","Levering sokkel","Lieferung Sockel"), L("caisson vide, couvercle protégé, tubes obturés","empty casing, protected lid, tubes plugged","lege kast, beschermd deksel, buizen afgedopt","leerer Kasten, geschützter Deckel, Rohre verschlossen"), L("position et niveau avant scellement","position and level before casting","positie en niveau vóór het instorten","Lage und Höhe vor dem Eingießen")],
+      [L("Chambre de visite","Inspection chamber","Inspectiekamer","Revisionskammer"), L("robinets, Schrader, dessiccant, vessie, témoin","valves, Schrader, desiccant, bladder, indicator","kranen, Schrader, droogmiddel, blaas, indicator","Hähne, Schrader, Trockenmittel, Blase, Indikator"), L("étanchéité des raccords","fitting tightness","dichtheid van de koppelingen","Dichtheit der Anschlüsse")],
+      [L("Chargement site","Loading on site","Laden ter plaatse","Bestückung vor Ort"), L("fond noir, mousse, blocs banc par banc, cales, LED","black back, foam, blocks row by row, shims, LED","zwarte bodem, schuim, blokken rij per rij, vulstukken, led","schwarzer Boden, Schaum, Blöcke reihenweise, Unterlagen, LED"), L("anneaux de Newton à blanc","Newton's rings dry check","Newtonringen bij passing","Newton-Ringe bei Probemontage")],
+      [L("Fermeture","Closing","Sluiting","Verschließen"), L("vissage en croix au couple, balayage azote 10 volumes","cross-pattern torque tightening, nitrogen purge 10 volumes","kruislings aandraaien op koppel, stikstofspoeling 10 volumes","Anzug über Kreuz mit Drehmoment, Stickstoffspülung 10 Volumen"), L("témoin d'humidité","humidity indicator","vochtindicator","Feuchteindikator")],
+      [L("Recette","Acceptance","Oplevering","Abnahme"), L("−0,2 bar / 24 h puis pression ambiante + vessie","−0.2 bar / 24 h then ambient pressure + bladder","−0,2 bar / 24 u daarna omgevingsdruk + blaas","−0,2 bar / 24 h, dann Umgebungsdruck + Blase"), L("PV signé, consigne d'entretien","signed report, maintenance instructions","ondertekend PV, onderhoudsinstructie","unterzeichnetes Protokoll, Wartungsanweisung")]
     ],
-    entretien:"Re-balayage azote sans démontage par les deux robinets ; dessiccant tous les 2 ans ; démontage complet possible, toron de rechange à prévoir."
+    entretien_t: L("Entretien","Maintenance","Onderhoud","Wartung"),
+    entretien: L("Re-balayage azote sans démontage par les deux robinets ; dessiccant tous les 2 ans ; démontage complet possible, toron de rechange à prévoir.",
+                 "Nitrogen re-purge without dismantling via the two valves; desiccant every 2 years; full dismantling possible, spare cord to be provided.",
+                 "Stikstof herspoelen zonder demontage via de twee kranen; droogmiddel om de 2 jaar; volledige demontage mogelijk, reservekoord voorzien.",
+                 "Stickstoff-Nachspülung ohne Demontage über die beiden Hähne; Trockenmittel alle 2 Jahre; vollständige Demontage möglich, Ersatz-Rundschnur vorsehen.")
   },
-  fournitures: [
-    ["Tôle 316L 3 mm, cornières 40×40×4, plat 60×10","chaudronnerie inox"],
-    ["Longerons 60×24 usinés à battée (4 longueurs)","atelier mécanique"],
-    ["Vitre feuilletée extra-claire 66.2 antireflet face 1 (Clearsight / OptiView / Luxar), bords polis","vitrier (Dochy Glas, Saint-Gobain…)"],
-    ["Toron EPDM Ø10 vulcanisé en cadre (+1 rechange)","fournisseur de joints"],
-    ["Bande caoutchouc autocollante 30 × 1 mm (~6 m)","fournisseur de joints"],
-    ["Mousse silicone cellules fermées 12 mm, noire","fournisseur mousses techniques"],
-    ["Verre laqué noir 4 mm (option fond)","vitrier"],
-    ["~127 vis M4×30 fraisées Torx T20 inox A4","visserie"],
-    ["2 tubes Ø10×1 inox, raccords à compression, 2 robinets, valve Schrader, vessie ~1 L, cartouche dessiccant, témoin d'humidité","fournitures pneumatiques / laboratoire"],
-    ["Option : profilé LED IP67 24 V ~3 W 3000 K sous la paroi haute + piquage Ø6 presse-étoupe","lot éclairage solaire / atelier inox (fixations, piquage)"]
-  ],
-  points_ouverts: [
-    "Fond noir : verre laqué noir 4 mm ou mousse silicone noire seule — échantillon à juger avec Eva.",
-    "Toron plein (30 %) ou creux (50 %) ; Torx standard ou inviolable.",
-    "Cadre visible 60 mm — l'atelier peut proposer 50 si la battée le permet.",
-    "Cote d'épaulement pierre devant le cadre — à caler sur « base mono bloc V00 »."
-  ],
+
+  fournitures: {
+    titre: L("Fournitures et filières","Supplies and sourcing","Leveringen en kanalen","Lieferungen und Bezugsquellen"),
+    colonnes:[L("Fourniture","Supply","Levering","Lieferung"), L("Filière","Source","Kanaal","Bezugsquelle")],
+    lignes:[
+      [L("Tôle 316L 3 mm, cornières 40×40×4, plat 60×10","316L sheet 3 mm, angles 40×40×4, flat 60×10","316L-plaat 3 mm, hoekprofielen 40×40×4, plat 60×10","Blech 316L 3 mm, Winkel 40×40×4, Flach 60×10"), L("chaudronnerie inox","stainless fabricator","inox-plaatwerker","Edelstahl-Blechbearbeitung")],
+      [L("Longerons 60×24 usinés à battée (4 longueurs)","60×24 rails machined with rebate (4 lengths)","Liggers 60×24 met gefreesde sponning (4 lengtes)","Leisten 60×24 mit gefrästem Falz (4 Längen)"), L("atelier mécanique","machine shop","mechanisch atelier","Maschinenbauwerkstatt")],
+      [L("Vitre feuilletée extra-claire 66.2 antireflet face 1 (Clearsight / OptiView / Luxar), bords polis","Extra-clear laminated glass 66.2, AR face 1 (Clearsight / OptiView / Luxar), polished edges","Extra-helder gelaagd glas 66.2 antireflectie zijde 1 (Clearsight / OptiView / Luxar), gepolijste randen","Extraklares Verbundglas 66.2, AR Seite 1 (Clearsight / OptiView / Luxar), polierte Kanten"), L("vitrier (Dochy Glas, Saint-Gobain…)","glazier (Dochy Glas, Saint-Gobain…)","glazenmaker (Dochy Glas, Saint-Gobain…)","Glaser (Dochy Glas, Saint-Gobain…)")],
+      [L("Toron EPDM Ø10 vulcanisé en cadre (+1 rechange)","Ø10 EPDM cord vulcanised as a frame (+1 spare)","EPDM-koord Ø10 gevulkaniseerd als kader (+1 reserve)","EPDM-Rundschnur Ø10 als Rahmen vulkanisiert (+1 Ersatz)"), L("fournisseur de joints","seal supplier","dichtingsleverancier","Dichtungslieferant")],
+      [L("Bande caoutchouc autocollante 30 × 1 mm (~6 m)","Self-adhesive rubber strip 30 × 1 mm (~6 m)","Zelfklevende rubberband 30 × 1 mm (~6 m)","Selbstklebendes Gummiband 30 × 1 mm (~6 m)"), L("fournisseur de joints","seal supplier","dichtingsleverancier","Dichtungslieferant")],
+      [L("Mousse silicone cellules fermées 12 mm, noire","Closed-cell silicone foam 12 mm, black","Gesloten-cellig siliconeschuim 12 mm, zwart","Geschlossenzelliger Silikonschaum 12 mm, schwarz"), L("fournisseur mousses techniques","technical foam supplier","leverancier technische schuimen","Lieferant technischer Schäume")],
+      [L("Verre laqué noir 4 mm (option fond)","Black lacquered glass 4 mm (back option)","Zwart gelakt glas 4 mm (optie bodem)","Schwarz lackiertes Glas 4 mm (Option Rückwand)"), L("vitrier","glazier","glazenmaker","Glaser")],
+      [L("~127 vis M4×30 fraisées Torx T20 inox A4","~127 M4×30 countersunk Torx T20 screws, A4 stainless","~127 verzonken schroeven M4×30 Torx T20 inox A4","~127 Senkschrauben M4×30 Torx T20 Edelstahl A4"), L("visserie","fasteners","bevestigingsmateriaal","Schraubenhandel")],
+      [L("2 tubes Ø10×1 inox, raccords à compression, 2 robinets, valve Schrader, vessie ~1 L, cartouche dessiccant, témoin d'humidité","2 stainless tubes Ø10×1, compression fittings, 2 valves, Schrader valve, ~1 L bladder, desiccant cartridge, humidity indicator","2 inox buizen Ø10×1, knelkoppelingen, 2 kranen, Schraderventiel, blaas ~1 L, droogmiddelpatroon, vochtindicator","2 Edelstahlrohre Ø10×1, Klemmverschraubungen, 2 Hähne, Schrader-Ventil, Blase ~1 L, Trockenmittelpatrone, Feuchteindikator"), L("fournitures pneumatiques / laboratoire","pneumatic / laboratory supplies","pneumatiek / laboratoriumbenodigdheden","Pneumatik- / Laborbedarf")],
+      [L("Option : profilé LED IP67 24 V ~3 W 3000 K sous la paroi haute + piquage Ø6 presse-étoupe","Option: IP67 LED profile 24 V ~3 W 3000 K under the top wall + Ø6 gland","Optie: ledprofiel IP67 24 V ~3 W 3000 K onder de bovenwand + wartel Ø6","Option: LED-Profil IP67 24 V ~3 W 3000 K unter der Oberwand + Stutzen Ø6 mit Stopfbuchse"), L("lot éclairage solaire / atelier inox (fixations, piquage)","solar lighting lot / stainless workshop (fixings, gland)","lot zonneverlichting / inox-atelier (bevestigingen, wartel)","Los Solarbeleuchtung / Edelstahlwerkstatt (Befestigungen, Stutzen)")]
+    ]
+  },
+
+  points_ouverts: {
+    titre: L("Points ouverts","Open points","Open punten","Offene Punkte"),
+    items:[
+      L("Fond noir : verre laqué noir 4 mm ou mousse silicone noire seule — échantillon à juger avec Eva.","Black background: 4 mm black lacquered glass or black silicone foam alone — sample to be assessed with Eva.","Zwarte achtergrond: zwart gelakt glas 4 mm of enkel zwart siliconeschuim — staal te beoordelen met Eva.","Schwarzer Hintergrund: schwarz lackiertes Glas 4 mm oder nur schwarzer Silikonschaum — Muster mit Eva zu beurteilen."),
+      L("Toron plein (30 %) ou creux (50 %) ; Torx standard ou inviolable.","Solid cord (30 %) or hollow (50 %); standard or tamper-proof Torx.","Vol koord (30 %) of hol (50 %); standaard of inbraakwerende Torx.","Volle Rundschnur (30 %) oder hohl (50 %); Torx Standard oder manipulationssicher."),
+      L("Cadre visible 60 mm — l'atelier peut proposer 50 si la battée le permet.","Visible frame 60 mm — the workshop may propose 50 if the rebate allows.","Zichtbaar kader 60 mm — het atelier mag 50 voorstellen als de sponning het toelaat.","Sichtbarer Rahmen 60 mm — die Werkstatt kann 50 vorschlagen, wenn der Falz es zulässt."),
+      L("Cote d'épaulement pierre devant le cadre — à caler sur « base mono bloc V00 ».","Stone shoulder dimension in front of the frame — to be aligned with “base mono bloc V00”.","Schoudermaat van de steen vóór het kader — af te stemmen op “base mono bloc V00”.","Steinabsatz vor dem Rahmen — mit „base mono bloc V00“ abzustimmen.")
+    ]
+  },
+
+  cao: {
+    titre: L("Prompt CAO (pour Jacky ou une IA de dessin)","CAD prompt (for Jacky or a drawing AI)","CAD-prompt (voor Jacky of een teken-AI)","CAD-Prompt (für Jacky oder eine Zeichen-KI)"),
+    note: L("Le prompt est rédigé en français, langue de travail de l'atelier.","The prompt is written in French, the workshop's working language.","De prompt is in het Frans opgesteld, de werktaal van het atelier.","Der Prompt ist auf Französisch verfasst, der Arbeitssprache der Werkstatt."),
+    texte: `Tu es un dessinateur CAO. À partir du brief ci-dessous, produis les plans cotés (3 vues + coupes AA/BB + éclaté) et les fichiers STEP/DXF de la vitrine « aquarium » des cristaux.
+Cavité utile 2 204 × 333 × 120 mm (33 blocs en 3 × 11). Caisson tôle 316L 3 mm pliée en U, flasques soudées, cornières 40×40×4 extérieures, cadre plat 60×10 taraudé M4 (axe à 15 du bord, pas 50), gorge 11×2 à 40 du bord (tiers côté intérieur). Couvercle : 4 longerons 60×24 à battée 32×19, vitre feuilletée extra-claire 66.2 antireflet face extérieure (13 mm) posée en battée sur bande caoutchouc 1 mm, vis M4×30 fraisées Torx ; caisson noyé dans le socle de pierre, battée de pierre 64×32 sur le pourtour. Deux piquages Ø10 en paroi arrière haute aux extrémités. Livrables : aquarium_ensemble.step/pdf, caisson.dxf (développé), longeron.dxf, vitre.dxf, tableau des masses.`
+  },
+
+  // ---- Documents (vignette + téléchargements) ------------------------------------------------
   documents: [
-    {n:"Dossier de consultation v02.2 — FR (PDF, 8 pages) — pour avis d'atelier et estimation de prix", u:"docs/consultation_aquarium_v02.pdf"},
-    {n:"Tender documentation v02.2 — English (.AG)", u:"docs/consultation_aquarium_v02_AG.pdf"},
-    {n:"Consultatiedossier v02.2 — Nederlands (.ND)", u:"docs/consultation_aquarium_v02_ND.pdf"},
-    {n:"Ausschreibungsunterlagen v02.2 — Deutsch (.DE)", u:"docs/consultation_aquarium_v02_DE.pdf"},
-    {n:"Note de principe v01 (PDF, 4 pages — variante 13 blocs, historique)", u:"docs/note_aquarium_v01.pdf"},
-    {n:"Brief CAO pour Jacky (Markdown)", u:"docs/brief_cao_jacky.md"},
-    {n:"Séquence de montage et essais (Markdown)", u:"docs/sequence_montage_essais.md"},
-    {n:"Étude constructive initiale : DXF caisson / longeron / vitre, STEP, dessins (site principal, mdp EVA)", u:"https://veilleurs-xi.vercel.app"},
-    {n:"Dossier du socle monobloc", u:"https://base-les-veilleurs.vercel.app"}
+    {groupe: L("Dossier de consultation","Tender file","Consultatiedossier","Ausschreibungsdossier"), items:[
+      {id:"LV-AQ-CONS-02", rev:"3", date:"25-09-26", statut:"CONSULTATION", pages:9, thumb:"docs/thumbs/consultation_fr.jpg",
+       titre:L("Dossier de consultation — menuiserie métallique inox : avis constructif et estimation de prix (FR)","Tender file — stainless metalwork: constructive opinion and price estimate (French)","Consultatiedossier — inox metaalwerk: constructief advies en prijsraming (Frans)","Ausschreibungsdossier — Edelstahl-Metallbau: konstruktive Stellungnahme und Preisschätzung (Französisch)"),
+       files:[{fmt:"PDF", u:"docs/consultation_aquarium_v02.pdf"}]},
+      {id:"LV-AQ-CONS-02.AG", rev:"3", date:"25-09-26", statut:"CONSULTATION", pages:9, thumb:"docs/thumbs/consultation_ag.jpg",
+       titre:L("Tender documentation — English (.AG)","Tender documentation — English (.AG)","Tender documentation — Engels (.AG)","Tender documentation — Englisch (.AG)"),
+       files:[{fmt:"PDF", u:"docs/consultation_aquarium_v02_AG.pdf"}]},
+      {id:"LV-AQ-CONS-02.ND", rev:"3", date:"25-09-26", statut:"CONSULTATION", pages:9, thumb:"docs/thumbs/consultation_nd.jpg",
+       titre:L("Consultatiedossier — Nederlands (.ND)","Consultatiedossier — Dutch (.ND)","Consultatiedossier — Nederlands (.ND)","Consultatiedossier — Niederländisch (.ND)"),
+       files:[{fmt:"PDF", u:"docs/consultation_aquarium_v02_ND.pdf"}]},
+      {id:"LV-AQ-CONS-02.DE", rev:"3", date:"25-09-26", statut:"CONSULTATION", pages:10, thumb:"docs/thumbs/consultation_de.jpg",
+       titre:L("Ausschreibungsunterlagen — Deutsch (.DE)","Ausschreibungsunterlagen — German (.DE)","Ausschreibungsunterlagen — Duits (.DE)","Ausschreibungsunterlagen — Deutsch (.DE)"),
+       files:[{fmt:"PDF", u:"docs/consultation_aquarium_v02_DE.pdf"}]}
+    ]},
+    {groupe: L("Dessins cotés","Dimensioned drawings","Gemaatvoerde tekeningen","Bemaßte Zeichnungen"), items:[
+      {id:"LV-AQ-PL-01", rev:"3", date:"25-09-26", statut:"CONSULTATION", thumb:"docs/thumbs/01_coupe_verticale.jpg", titre:L("Coupe verticale de principe","Vertical section, principle","Verticale principedoorsnede","Vertikalschnitt, Prinzip"), files:[{fmt:"PDF", u:"docs/pdf/LV-AQ-PL-01_coupe_verticale.pdf"},{fmt:"PNG", u:"docs/plans/01_coupe_verticale.png"}]},
+      {id:"LV-AQ-PL-02", rev:"3", date:"25-09-26", statut:"CONSULTATION", thumb:"docs/thumbs/02_detail_serrage.jpg", titre:L("Détail du serrage périphérique","Peripheral clamping detail","Detail van de omtrekklemming","Detail der umlaufenden Klemmung"), files:[{fmt:"PDF", u:"docs/pdf/LV-AQ-PL-02_detail_serrage.pdf"},{fmt:"PNG", u:"docs/plans/02_detail_serrage.png"}]},
+      {id:"LV-AQ-PL-03", rev:"2", date:"25-09-26", statut:"CONSULTATION", thumb:"docs/thumbs/03_face_et_plan.jpg", titre:L("Vue de face et plan cotés (3 × 11 blocs)","Dimensioned front view and plan (3 × 11 blocks)","Gemaatvoerd vooraanzicht en plattegrond (3 × 11 blokken)","Bemaßte Ansicht und Grundriss (3 × 11 Blöcke)"), files:[{fmt:"PDF", u:"docs/pdf/LV-AQ-PL-03_face_et_plan.pdf"},{fmt:"PNG", u:"docs/plans/03_face_et_plan.png"}]},
+      {id:"LV-AQ-PL-04", rev:"1", date:"25-09-26", statut:"CONSULTATION", thumb:"docs/thumbs/04_circuit_gaz.jpg", titre:L("Circuit gaz : azote sec, vessie, dessiccant","Gas circuit: dry nitrogen, bladder, desiccant","Gascircuit: droge stikstof, blaas, droogmiddel","Gaskreislauf: trockener Stickstoff, Blase, Trockenmittel"), files:[{fmt:"PDF", u:"docs/pdf/LV-AQ-PL-04_circuit_gaz.pdf"},{fmt:"PNG", u:"docs/plans/04_circuit_gaz.png"}]},
+      {id:"LV-AQ-PL-05", rev:"1", date:"25-09-26", statut:"CONSULTATION", thumb:"docs/thumbs/05_sequence_montage.jpg", titre:L("Séquence de montage","Assembly sequence","Montagevolgorde","Montageablauf"), files:[{fmt:"PDF", u:"docs/pdf/LV-AQ-PL-05_sequence_montage.pdf"},{fmt:"PNG", u:"docs/plans/05_sequence_montage.png"}]},
+      {id:"LV-AQ-PL-06", rev:"1", date:"25-09-26", statut:"CONSULTATION", thumb:"docs/thumbs/06_caisson_vues.jpg", titre:L("Caisson soudé : vue arrière et vue de dessus","Welded casing: rear and top views","Gelaste kast: achter- en bovenaanzicht","Geschweißter Kasten: Rück- und Draufsicht"), files:[{fmt:"PDF", u:"docs/pdf/LV-AQ-PL-06_caisson_vues.pdf"},{fmt:"PNG", u:"docs/plans/06_caisson_vues.png"}]},
+      {id:"LV-AQ-PL-07", rev:"2", date:"25-09-26", statut:"CONSULTATION", thumb:"docs/thumbs/07_profil_longeron.jpg", titre:L("Profil du longeron à battée 60×24","Rebated rail profile 60×24","Profiel van de ligger met sponning 60×24","Profil der Falzleiste 60×24"), files:[{fmt:"PDF", u:"docs/pdf/LV-AQ-PL-07_profil_longeron.pdf"},{fmt:"PNG", u:"docs/plans/07_profil_longeron.png"}]}
+    ]},
+    {groupe: L("Vues 3D","3D views","3D-zichten","3D-Ansichten"), items:[
+      {id:"LV-AQ-3D-01", rev:"1", date:"25-09-26", statut:"CONSULTATION", thumb:"docs/thumbs/3D_1_eclate_avant.jpg", titre:L("Vue éclatée depuis l'avant","Exploded view from the front","Geëxplodeerd zicht van voren","Explosionsansicht von vorn"), files:[{fmt:"PDF", u:"docs/pdf/LV-AQ-3D-01_eclate_avant.pdf"},{fmt:"PNG", u:"docs/plans/3D_1_eclate_avant.png"}]},
+      {id:"LV-AQ-3D-02", rev:"1", date:"25-09-26", statut:"CONSULTATION", thumb:"docs/thumbs/3D_2_eclate_arriere.jpg", titre:L("Vue éclatée depuis l'arrière","Exploded view from the rear","Geëxplodeerd zicht van achteren","Explosionsansicht von hinten"), files:[{fmt:"PDF", u:"docs/pdf/LV-AQ-3D-02_eclate_arriere.pdf"},{fmt:"PNG", u:"docs/plans/3D_2_eclate_arriere.png"}]},
+      {id:"LV-AQ-3D-03", rev:"1", date:"25-09-26", statut:"CONSULTATION", thumb:"docs/thumbs/3D_3_assemble.jpg", titre:L("Ensemble assemblé","Assembled unit","Gemonteerd geheel","Zusammengebaut"), files:[{fmt:"PDF", u:"docs/pdf/LV-AQ-3D-03_assemble.pdf"},{fmt:"PNG", u:"docs/plans/3D_3_assemble.png"}]},
+      {id:"LV-AQ-3D-04", rev:"1", date:"25-09-26", statut:"CONSULTATION", thumb:"docs/thumbs/3D_4_detail_angle.jpg", titre:L("Détail d'angle éclaté","Exploded corner detail","Geëxplodeerd hoekdetail","Explosionsdetail Ecke"), files:[{fmt:"PDF", u:"docs/pdf/LV-AQ-3D-04_detail_angle.pdf"},{fmt:"PNG", u:"docs/plans/3D_4_detail_angle.png"}]}
+    ]},
+    {groupe: L("Notes et briefs","Notes and briefs","Nota's en briefings","Notizen und Briefings"), items:[
+      {id:"LV-AQ-NOTE-01", rev:"1", date:"25-09-26", statut:"HISTORIQUE", pages:5, thumb:"docs/thumbs/note_v01.jpg", titre:L("Note de principe v01 (variante 13 blocs, historique)","Principle note v01 (13-block variant, superseded)","Principenota v01 (variant 13 blokken, vervallen)","Grundsatznotiz v01 (Variante 13 Blöcke, überholt)"), files:[{fmt:"PDF", u:"docs/note_aquarium_v01.pdf"}]},
+      {id:"LV-AQ-CAO-01", rev:"1", date:"25-09-26", statut:"ÉTUDE", titre:L("Brief CAO pour Jacky (Markdown, FR)","CAD brief for Jacky (Markdown, French)","CAD-briefing voor Jacky (Markdown, Frans)","CAD-Briefing für Jacky (Markdown, Französisch)"), files:[{fmt:"MD", u:"docs/brief_cao_jacky.md"}]},
+      {id:"LV-AQ-MONT-01", rev:"1", date:"25-09-26", statut:"ÉTUDE", titre:L("Séquence de montage et essais (Markdown, FR)","Assembly sequence and tests (Markdown, French)","Montagevolgorde en proeven (Markdown, Frans)","Montageablauf und Prüfungen (Markdown, Französisch)"), files:[{fmt:"MD", u:"docs/sequence_montage_essais.md"}]}
+    ]},
+    {groupe: L("Dossiers liés","Related files","Verwante dossiers","Verwandte Dossiers"), items:[
+      {titre:L("Étude constructive initiale : DXF caisson / longeron / vitre, STEP, dessins (site principal, code EVA)","Initial constructive study: casing / rail / glass DXF, STEP, drawings (main site, code EVA)","Initiële constructieve studie: DXF kast / ligger / glas, STEP, tekeningen (hoofdsite, code EVA)","Erste Konstruktionsstudie: DXF Kasten / Leiste / Glas, STEP, Zeichnungen (Hauptseite, Code EVA)"), files:[{fmt:"veilleurs-xi.vercel.app", u:"https://veilleurs-xi.vercel.app", ext:true}]},
+      {titre:L("Dossier du socle monobloc","Monolithic base file","Dossier monoliet sokkel","Dossier monolithischer Sockel"), files:[{fmt:"base-les-veilleurs.vercel.app", u:"https://base-les-veilleurs.vercel.app/?code=EVA", ext:true}]},
+      {titre:L("Dossier de la vitrine lenticulaire","Lenticular showcase file","Dossier lenticulaire vitrine","Dossier Lentikular-Vitrine"), files:[{fmt:"vitrine-lenticulaire.vercel.app", u:"https://vitrine-lenticulaire.vercel.app/?code=EVA", ext:true}]}
+    ]}
   ],
-  prompt_cao: `Tu es un dessinateur CAO. À partir du brief ci-dessous, produis les plans cotés (3 vues + coupes AA/BB + éclaté) et les fichiers STEP/DXF de la vitrine « aquarium » des cristaux.
-Cavité utile 2 204 × 333 × 120 mm (33 blocs en 3 × 11). Caisson tôle 316L 3 mm pliée en U, flasques soudées, cornières 40×40×4 extérieures, cadre plat 60×10 taraudé M4 (axe à 15 du bord, pas 50), gorge 11×2 à 40 du bord (tiers côté intérieur). Couvercle : 4 longerons 60×24 à battée 32×19, vitre feuilletée extra-claire 66.2 antireflet face extérieure (13 mm) posée en battée sur bande caoutchouc 1 mm, vis M4×30 ; caisson noyé dans le socle de pierre, battée de pierre 64×32 sur le pourtour fraisées Torx. Deux piquages Ø10 en paroi arrière haute aux extrémités. Livrables : aquarium_ensemble.step/pdf, caisson.dxf (développé), longeron.dxf, vitre.dxf, tableau des masses.`,
+
   journal: [
-    {d:"22-09-2026", t:"Principe « aquarium basculé » dicté ; première coupe et dimensionnement 3 × 13 (fil « Dossier technique architectural »)."},
-    {d:"sept. 2026", t:"Étude constructive publiée sur le site principal : tôle pliée, longerons à battée, 104 vis, DXF/STEP ; vide écarté au profit de l'azote sec ; une seule rampe LED."},
-    {d:"25-09-2026", t:"v0.1 — dossier de construction dédié : note de principe v01, cinq dessins, brief CAO, séquence de montage et essais, site ; dépôt GitHub PLHFak/Aquarium-K9."},
-    {d:"25-09-2026", t:"v0.2 — 3 × 11 blocs arrêté (33). Dossier de consultation v02 pour menuiserie métallique inox : description pièce par pièce, nomenclature, lots à chiffrer, questions d'atelier ; dessins 06 (caisson) et 07 (profil longeron)."},
-    {d:"25-09-2026", t:"v0.3 — quatre vues 3D éclatées (avant, arrière, détail d'angle, assemblé) ajoutées au site et au dossier de consultation v02."},
-    {d:"25-09-2026", t:"v0.4 — vitre précisée : feuilleté extra-clair 66.2 avec couche antireflet sur la face extérieure ; rampe LED en haut de la boîte passée en option 3 (fixations + piquage Ø6). Consultation v02.1."},
-    {d:"25-09-2026", t:"v0.5 — cartouche technique en pied de page (artiste-maître d'œuvre, assistant électromécanique, n° de document, révision, date-heure, statut, mention légale) ; calendrier de consultation ; consultation v02.2 entièrement traduite (textes, tableaux, cartouche) en FR, AG, ND, DE — croquis légendés en français."},
-    {d:"25-09-2026", t:"v0.6 — niche de pierre dessinée sur le pourtour (coupe et détail), battée de pierre 64 × 32 affleurant la vitre ; silicone retiré, vitre posée sur bande caoutchouc autocollante 1 × 30 mm ; profondeur caisson corrigée à ~106 (blocs affleurant la vitre) ; consultation v02.3."},
-    {d:"25-09-2026", t:"v0.7 — toron déplacé au tiers de la largeur du cadre côté intérieur (axe à 40 du bord extérieur), à l'écart du chant de la vitre ; dessins 01, 02, 07 et textes mis à jour."},
-    {d:"25-09-2026", t:"Site en ligne : https://aquarium-k9.vercel.app (code EVA), déploiement automatique à chaque push."}
+    {d:"22-09-2026", t:L("Principe « aquarium basculé » dicté ; première coupe et dimensionnement 3 × 13 (fil « Dossier technique architectural »).","“Tilted aquarium” principle dictated; first section and 3 × 13 sizing (thread “Dossier technique architectural”).","Principe “gekanteld aquarium” gedicteerd; eerste doorsnede en dimensionering 3 × 13 (draad “Dossier technique architectural”).","Prinzip „gekipptes Aquarium“ diktiert; erster Schnitt und Dimensionierung 3 × 13 (Faden „Dossier technique architectural“).")},
+    {d:"sept. 2026", t:L("Étude constructive publiée sur le site principal : tôle pliée, longerons à battée, 104 vis, DXF/STEP ; vide écarté au profit de l'azote sec ; une seule rampe LED.","Constructive study published on the main site: bent sheet, rebated rails, 104 screws, DXF/STEP; vacuum dropped in favour of dry nitrogen; single LED strip.","Constructieve studie gepubliceerd op de hoofdsite: geplooide plaat, liggers met sponning, 104 schroeven, DXF/STEP; vacuüm verlaten ten gunste van droge stikstof; één ledstrip.","Konstruktionsstudie auf der Hauptseite veröffentlicht: Kantblech, Falzleisten, 104 Schrauben, DXF/STEP; Vakuum zugunsten von trockenem Stickstoff verworfen; eine LED-Leiste.")},
+    {d:"25-09-2026", t:L("v0.1 — dossier de construction dédié : note de principe v01, cinq dessins, brief CAO, séquence de montage et essais, site ; dépôt GitHub PLHFak/Aquarium-K9.","v0.1 — dedicated construction file: principle note v01, five drawings, CAD brief, assembly and test sequence, site; GitHub repo PLHFak/Aquarium-K9.","v0.1 — eigen bouwdossier: principenota v01, vijf tekeningen, CAD-briefing, montage- en proefvolgorde, site; GitHub-repo PLHFak/Aquarium-K9.","v0.1 — eigenes Baudossier: Grundsatznotiz v01, fünf Zeichnungen, CAD-Briefing, Montage- und Prüfablauf, Website; GitHub-Repo PLHFak/Aquarium-K9.")},
+    {d:"25-09-2026", t:L("v0.2 — 3 × 11 blocs arrêté (33). Dossier de consultation v02 pour menuiserie métallique inox : description pièce par pièce, nomenclature, lots à chiffrer, questions d'atelier ; dessins 06 (caisson) et 07 (profil longeron).","v0.2 — 3 × 11 blocks fixed (33). Tender file v02 for stainless metalwork: part-by-part description, bill of materials, lots to quote, workshop questions; drawings 06 (casing) and 07 (rail profile).","v0.2 — 3 × 11 blokken vastgelegd (33). Consultatiedossier v02 voor inox metaalwerk: beschrijving per onderdeel, stuklijst, te ramen loten, ateliervragen; tekeningen 06 (kast) en 07 (liggerprofiel).","v0.2 — 3 × 11 Blöcke festgelegt (33). Ausschreibungsdossier v02 für Edelstahl-Metallbau: Beschreibung Teil für Teil, Stückliste, zu kalkulierende Lose, Werkstattfragen; Zeichnungen 06 (Kasten) und 07 (Leistenprofil).")},
+    {d:"25-09-2026", t:L("v0.3 — quatre vues 3D éclatées (avant, arrière, détail d'angle, assemblé) ajoutées au site et au dossier de consultation v02.","v0.3 — four exploded 3D views (front, rear, corner detail, assembled) added to the site and to tender file v02.","v0.3 — vier geëxplodeerde 3D-zichten (voor, achter, hoekdetail, gemonteerd) toegevoegd aan de site en aan consultatiedossier v02.","v0.3 — vier Explosionsansichten 3D (vorn, hinten, Eckdetail, montiert) auf der Website und im Ausschreibungsdossier v02 ergänzt.")},
+    {d:"25-09-2026", t:L("v0.4 — vitre précisée : feuilleté extra-clair 66.2 avec couche antireflet sur la face extérieure ; rampe LED en haut de la boîte passée en option 3 (fixations + piquage Ø6). Consultation v02.1.","v0.4 — glass specified: extra-clear laminated 66.2 with AR coating on the outer face; LED strip at the top moved to option 3 (fixings + Ø6 gland). Tender v02.1.","v0.4 — glas gepreciseerd: extra-helder gelaagd 66.2 met antireflectielaag op de buitenzijde; ledstrip bovenin naar optie 3 (bevestigingen + wartel Ø6). Consultatie v02.1.","v0.4 — Glas präzisiert: extraklares Verbundglas 66.2 mit AR-Schicht außen; LED-Leiste oben als Option 3 (Befestigungen + Stutzen Ø6). Ausschreibung v02.1.")},
+    {d:"25-09-2026", t:L("v0.5 — cartouche technique en pied de page ; calendrier de consultation ; consultation v02.2 entièrement traduite (textes, tableaux, cartouche) en FR, AG, ND, DE — croquis légendés en français.","v0.5 — technical title block in the footer; tender schedule; tender v02.2 fully translated (texts, tables, title block) into FR, AG, ND, DE — sketches captioned in French.","v0.5 — technisch cartouche in de voettekst; consultatiekalender; consultatie v02.2 volledig vertaald (teksten, tabellen, cartouche) in FR, AG, ND, DE — schetsen in het Frans gelegend.","v0.5 — technisches Schriftfeld in der Fußzeile; Ausschreibungskalender; Ausschreibung v02.2 vollständig übersetzt (Texte, Tabellen, Schriftfeld) in FR, AG, ND, DE — Skizzen auf Französisch beschriftet.")},
+    {d:"25-09-2026", t:L("v0.6 — niche de pierre dessinée sur le pourtour (coupe et détail), battée de pierre 64 × 32 affleurant la vitre ; silicone retiré, vitre posée sur bande caoutchouc autocollante 1 × 30 mm ; profondeur caisson corrigée à ~106 (blocs affleurant la vitre) ; consultation v02.3.","v0.6 — stone niche drawn all round (section and detail), 64 × 32 stone rebate flush with the glass; silicone removed, glass laid on 1 × 30 mm self-adhesive rubber strip; casing depth corrected to ~106 (blocks flush with the glass); tender v02.3.","v0.6 — steennis rondom getekend (doorsnede en detail), steensponning 64 × 32 gelijk met het glas; silicone verwijderd, glas op zelfklevende rubberband 1 × 30 mm; kastdiepte gecorrigeerd naar ~106 (blokken gelijk met het glas); consultatie v02.3.","v0.6 — Steinnische umlaufend gezeichnet (Schnitt und Detail), Steinfalz 64 × 32 bündig mit der Scheibe; Silikon entfernt, Glas auf selbstklebendem Gummiband 1 × 30 mm; Kastentiefe auf ~106 korrigiert (Blöcke bündig mit der Scheibe); Ausschreibung v02.3.")},
+    {d:"25-09-2026", t:L("v0.7 — toron déplacé au tiers de la largeur du cadre côté intérieur (axe à 40 du bord extérieur), à l'écart du chant de la vitre ; dessins 01, 02, 07 et textes mis à jour.","v0.7 — cord moved to the inner third of the frame width (axis 40 from the outer edge), clear of the glass edge; drawings 01, 02, 07 and texts updated.","v0.7 — koord verplaatst naar het binnenste derde van de kaderbreedte (as op 40 van de buitenrand), weg van de glasrand; tekeningen 01, 02, 07 en teksten bijgewerkt.","v0.7 — Rundschnur ins innere Drittel der Rahmenbreite verlegt (Achse 40 vom Außenrand), abseits der Glaskante; Zeichnungen 01, 02, 07 und Texte aktualisiert.")},
+    {d:"25-09-2026", t:L("Site en ligne : https://aquarium-k9.vercel.app (code EVA), déploiement automatique à chaque push.","Site online: https://aquarium-k9.vercel.app (code EVA), automatic deployment on every push.","Site online: https://aquarium-k9.vercel.app (code EVA), automatische deployment bij elke push.","Website online: https://aquarium-k9.vercel.app (Code EVA), automatisches Deployment bei jedem Push.")},
+    {d:"25-09-2026", t:L("v0.8 — charte commune aux trois dossiers (base, vitrine, aquarium) : mêmes styles, barre de titre et cartouche ; site en quatre langues (FR / EN / NL / DE) par onglets ; section Documents avec vignette, numéro, révision et statut par document ; dessins téléchargeables en PDF avec cartouche et en PNG.","v0.8 — shared design for the three files (base, showcase, aquarium): same styles, title bar and title block; site in four languages (FR / EN / NL / DE) via tabs; Documents section with thumbnail, number, revision and status per document; drawings downloadable as PDF with title block and as PNG.","v0.8 — gemeenschappelijke huisstijl voor de drie dossiers (sokkel, vitrine, aquarium): dezelfde stijlen, titelbalk en cartouche; site in vier talen (FR / EN / NL / DE) via tabbladen; sectie Documenten met vignet, nummer, revisie en status per document; tekeningen te downloaden als PDF met cartouche en als PNG.","v0.8 — gemeinsames Erscheinungsbild der drei Dossiers (Sockel, Vitrine, Aquarium): gleiche Stile, Titelleiste und Schriftfeld; Website in vier Sprachen (FR / EN / NL / DE) über Reiter; Abschnitt Dokumente mit Vorschaubild, Nummer, Revision und Status je Dokument; Zeichnungen als PDF mit Schriftfeld und als PNG herunterladbar.")}
   ]
 };
