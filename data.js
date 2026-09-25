@@ -1,6 +1,6 @@
 // Vitrine « aquarium » des cristaux — données du site (édition : modifier ce fichier, index.html ne change pas)
 window.DATA = {
-  version: "0.2",
+  version: "0.3",
   date: "25-09-2026",
   titre: "Vitrine « aquarium » des cristaux",
   sous_titre: "Les Veilleurs · Eva L'Hoest / EHlab · Beaufort 27, Westende — dossier de construction",
@@ -10,6 +10,10 @@ window.DATA = {
       {src:"docs/plans/01_coupe_verticale.png", legende:"Coupe verticale de principe"},
       {src:"docs/plans/03_face_et_plan.png", legende:"Vue de face et plan cotés (3 × 11 blocs)"},
       {src:"docs/plans/06_caisson_vues.png", legende:"Caisson soudé : vue arrière et vue de dessus"},
+      {src:"docs/plans/3D_1_eclate_avant.png", legende:"Vue 3D éclatée depuis l'avant"},
+      {src:"docs/plans/3D_2_eclate_arriere.png", legende:"Vue 3D éclatée depuis l'arrière"},
+      {src:"docs/plans/3D_4_detail_angle.png", legende:"Détail d'angle éclaté : cadre, toron, longeron, vitre, vis"},
+      {src:"docs/plans/3D_3_assemble.png", legende:"Ensemble assemblé"},
       {src:"docs/plans/02_detail_serrage.png", legende:"Détail du serrage périphérique"}
     ]
   },
@@ -80,6 +84,7 @@ Cavité utile 2 204 × 333 × 120 mm (33 blocs en 3 × 11). Caisson tôle 316L 3
     {d:"22-09-2026", t:"Dictée du principe « aquarium basculé » par Pierre ; première coupe et dimensionnement 3 × 13 (fil « Dossier technique architectural »)."},
     {d:"sept. 2026", t:"Étude constructive publiée sur le site principal : tôle pliée, longerons à battée, 104 vis, DXF/STEP ; vide écarté au profit de l'azote sec ; une seule rampe LED."},
     {d:"25-09-2026", t:"v0.1 — dossier de construction dédié : note de principe v01, cinq dessins, brief CAO, séquence de montage et essais, site ; dépôt GitHub PLHFak/Aquarium-K9."},
-    {d:"25-09-2026", t:"v0.2 — 3 × 11 blocs arrêté (33). Dossier de consultation v02 pour menuiserie métallique inox : description pièce par pièce, nomenclature, lots à chiffrer, questions d'atelier ; dessins 06 (caisson) et 07 (profil longeron)."}
+    {d:"25-09-2026", t:"v0.2 — 3 × 11 blocs arrêté (33). Dossier de consultation v02 pour menuiserie métallique inox : description pièce par pièce, nomenclature, lots à chiffrer, questions d'atelier ; dessins 06 (caisson) et 07 (profil longeron)."},
+    {d:"25-09-2026", t:"v0.3 — quatre vues 3D éclatées (avant, arrière, détail d'angle, assemblé) ajoutées au site et au dossier de consultation v02."}
   ]
 };
