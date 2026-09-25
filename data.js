@@ -1,9 +1,9 @@
 // Vitrine « aquarium » des cristaux — données du site (édition : modifier ce fichier, index.html ne change pas)
 window.DATA = {
-  version: "0.4",
+  version: "0.5",
   date: "25-09-2026",
   titre: "Vitrine « aquarium » des cristaux",
-  sous_titre: "Les Veilleurs · Eva L'Hoest / EHlab · Beaufort 27, Westende — dossier de construction",
+  sous_titre: "Les Veilleurs · Eva L'Hoest · Beaufort 27 — dossier de construction",
   contexte: {
     texte: "Une niche métallique étanche fermée par une vitre, où 33 blocs de cristal K9 gravés (200 × 100 × 100 mm, ≈ 5 kg chacun) sont présentés sur fond noir, sous azote sec, éclairés en option par une rampe LED en haut de la boîte. Le caisson est livré vide, noyé dans le socle monobloc ; les cristaux sont posés sur place. Tout se démonte et s'entretient depuis une chambre de visite arrière.",
     vues: [
@@ -70,7 +70,10 @@ window.DATA = {
     "Cote d'épaulement pierre devant le cadre — à caler sur « base mono bloc V00 »."
   ],
   documents: [
-    {n:"Dossier de consultation v02 (PDF, 5 pages) — pour avis d'atelier et estimation de prix", u:"docs/consultation_aquarium_v02.pdf"},
+    {n:"Dossier de consultation v02.2 (PDF, 7 pages) — pour avis d'atelier et estimation de prix", u:"docs/consultation_aquarium_v02.pdf"},
+    {n:"Idem, cartouche anglais (.AG)", u:"docs/consultation_aquarium_v02_AG.pdf"},
+    {n:"Idem, cartouche néerlandais (.ND)", u:"docs/consultation_aquarium_v02_ND.pdf"},
+    {n:"Idem, cartouche allemand (.DE)", u:"docs/consultation_aquarium_v02_DE.pdf"},
     {n:"Note de principe v01 (PDF, 4 pages — variante 13 blocs, historique)", u:"docs/note_aquarium_v01.pdf"},
     {n:"Brief CAO pour Jacky (Markdown)", u:"docs/brief_cao_jacky.md"},
     {n:"Séquence de montage et essais (Markdown)", u:"docs/sequence_montage_essais.md"},
@@ -80,11 +83,12 @@ window.DATA = {
   prompt_cao: `Tu es un dessinateur CAO. À partir du brief ci-dessous, produis les plans cotés (3 vues + coupes AA/BB + éclaté) et les fichiers STEP/DXF de la vitrine « aquarium » des cristaux.
 Cavité utile 2 204 × 333 × 120 mm (33 blocs en 3 × 11). Caisson tôle 316L 3 mm pliée en U, flasques soudées, cornières 40×40×4 extérieures, cadre plat 60×10 taraudé M4 (axe à 15 du bord, pas 50), gorge 11×2 à 44,5 du bord. Couvercle : 4 longerons 60×24 à battée 32×19, vitre feuilletée extra-claire 66.2 antireflet face extérieure (13 mm) collée en battée, vis M4×30 fraisées Torx. Deux piquages Ø10 en paroi arrière haute aux extrémités. Livrables : aquarium_ensemble.step/pdf, caisson.dxf (développé), longeron.dxf, vitre.dxf, tableau des masses.`,
   journal: [
-    {d:"22-09-2026", t:"Dictée du principe « aquarium basculé » par Pierre ; première coupe et dimensionnement 3 × 13 (fil « Dossier technique architectural »)."},
+    {d:"22-09-2026", t:"Principe « aquarium basculé » dicté ; première coupe et dimensionnement 3 × 13 (fil « Dossier technique architectural »)."},
     {d:"sept. 2026", t:"Étude constructive publiée sur le site principal : tôle pliée, longerons à battée, 104 vis, DXF/STEP ; vide écarté au profit de l'azote sec ; une seule rampe LED."},
     {d:"25-09-2026", t:"v0.1 — dossier de construction dédié : note de principe v01, cinq dessins, brief CAO, séquence de montage et essais, site ; dépôt GitHub PLHFak/Aquarium-K9."},
     {d:"25-09-2026", t:"v0.2 — 3 × 11 blocs arrêté (33). Dossier de consultation v02 pour menuiserie métallique inox : description pièce par pièce, nomenclature, lots à chiffrer, questions d'atelier ; dessins 06 (caisson) et 07 (profil longeron)."},
     {d:"25-09-2026", t:"v0.3 — quatre vues 3D éclatées (avant, arrière, détail d'angle, assemblé) ajoutées au site et au dossier de consultation v02."},
-    {d:"25-09-2026", t:"v0.4 — vitre précisée : feuilleté extra-clair 66.2 avec couche antireflet sur la face extérieure ; rampe LED en haut de la boîte passée en option 3 (fixations + piquage Ø6). Consultation v02.1."}
+    {d:"25-09-2026", t:"v0.4 — vitre précisée : feuilleté extra-clair 66.2 avec couche antireflet sur la face extérieure ; rampe LED en haut de la boîte passée en option 3 (fixations + piquage Ø6). Consultation v02.1."},
+    {d:"25-09-2026", t:"v0.5 — cartouche technique en pied de page (artiste-maître d'œuvre, assistant électromécanique, n° de document, révision, date-heure, statut, mention légale) ; calendrier de consultation ; consultation v02.2 en FR, AG, ND, DE."}
   ]
 };
