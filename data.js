@@ -1,6 +1,6 @@
 // Vitrine « aquarium » des cristaux — données du site (édition : modifier ce fichier, index.html ne change pas)
 window.DATA = {
-  version: "0.6",
+  version: "0.7",
   date: "25-09-2026",
   titre: "Vitrine « aquarium » des cristaux",
   sous_titre: "Les Veilleurs · Eva L'Hoest · Beaufort 27 — dossier de construction",
@@ -82,7 +82,7 @@ window.DATA = {
     {n:"Dossier du socle monobloc", u:"https://base-les-veilleurs.vercel.app"}
   ],
   prompt_cao: `Tu es un dessinateur CAO. À partir du brief ci-dessous, produis les plans cotés (3 vues + coupes AA/BB + éclaté) et les fichiers STEP/DXF de la vitrine « aquarium » des cristaux.
-Cavité utile 2 204 × 333 × 120 mm (33 blocs en 3 × 11). Caisson tôle 316L 3 mm pliée en U, flasques soudées, cornières 40×40×4 extérieures, cadre plat 60×10 taraudé M4 (axe à 15 du bord, pas 50), gorge 11×2 à 44,5 du bord. Couvercle : 4 longerons 60×24 à battée 32×19, vitre feuilletée extra-claire 66.2 antireflet face extérieure (13 mm) posée en battée sur bande caoutchouc 1 mm, vis M4×30 ; caisson noyé dans le socle de pierre, battée de pierre 64×32 sur le pourtour fraisées Torx. Deux piquages Ø10 en paroi arrière haute aux extrémités. Livrables : aquarium_ensemble.step/pdf, caisson.dxf (développé), longeron.dxf, vitre.dxf, tableau des masses.`,
+Cavité utile 2 204 × 333 × 120 mm (33 blocs en 3 × 11). Caisson tôle 316L 3 mm pliée en U, flasques soudées, cornières 40×40×4 extérieures, cadre plat 60×10 taraudé M4 (axe à 15 du bord, pas 50), gorge 11×2 à 40 du bord (tiers côté intérieur). Couvercle : 4 longerons 60×24 à battée 32×19, vitre feuilletée extra-claire 66.2 antireflet face extérieure (13 mm) posée en battée sur bande caoutchouc 1 mm, vis M4×30 ; caisson noyé dans le socle de pierre, battée de pierre 64×32 sur le pourtour fraisées Torx. Deux piquages Ø10 en paroi arrière haute aux extrémités. Livrables : aquarium_ensemble.step/pdf, caisson.dxf (développé), longeron.dxf, vitre.dxf, tableau des masses.`,
   journal: [
     {d:"22-09-2026", t:"Principe « aquarium basculé » dicté ; première coupe et dimensionnement 3 × 13 (fil « Dossier technique architectural »)."},
     {d:"sept. 2026", t:"Étude constructive publiée sur le site principal : tôle pliée, longerons à battée, 104 vis, DXF/STEP ; vide écarté au profit de l'azote sec ; une seule rampe LED."},
@@ -91,6 +91,7 @@ Cavité utile 2 204 × 333 × 120 mm (33 blocs en 3 × 11). Caisson tôle 316L 3
     {d:"25-09-2026", t:"v0.3 — quatre vues 3D éclatées (avant, arrière, détail d'angle, assemblé) ajoutées au site et au dossier de consultation v02."},
     {d:"25-09-2026", t:"v0.4 — vitre précisée : feuilleté extra-clair 66.2 avec couche antireflet sur la face extérieure ; rampe LED en haut de la boîte passée en option 3 (fixations + piquage Ø6). Consultation v02.1."},
     {d:"25-09-2026", t:"v0.5 — cartouche technique en pied de page (artiste-maître d'œuvre, assistant électromécanique, n° de document, révision, date-heure, statut, mention légale) ; calendrier de consultation ; consultation v02.2 entièrement traduite (textes, tableaux, cartouche) en FR, AG, ND, DE — croquis légendés en français."},
-    {d:"25-09-2026", t:"v0.6 — niche de pierre dessinée sur le pourtour (coupe et détail), battée de pierre 64 × 32 affleurant la vitre ; silicone retiré, vitre posée sur bande caoutchouc autocollante 1 × 30 mm ; profondeur caisson corrigée à ~106 (blocs affleurant la vitre) ; consultation v02.3."}
+    {d:"25-09-2026", t:"v0.6 — niche de pierre dessinée sur le pourtour (coupe et détail), battée de pierre 64 × 32 affleurant la vitre ; silicone retiré, vitre posée sur bande caoutchouc autocollante 1 × 30 mm ; profondeur caisson corrigée à ~106 (blocs affleurant la vitre) ; consultation v02.3."},
+    {d:"25-09-2026", t:"v0.7 — toron déplacé au tiers de la largeur du cadre côté intérieur (axe à 40 du bord extérieur), à l'écart du chant de la vitre ; dessins 01, 02, 07 et textes mis à jour."}
   ]
 };
