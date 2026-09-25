@@ -9,4 +9,4 @@ Dossier de construction de la niche métallique des cristaux K9 (site statique, 
 
 Site : https://aquarium-k9.vercel.app (déploiement Vercel automatique à chaque push).
 
-Code d'accès de la page : `EVA` (côté client, dans `index.html`, fonction `gate`).
+Lien direct à transmettre : https://aquarium-k9.vercel.app/?code=EVA (le code passe dans le lien). Code d'accès de la page : `EVA` (côté client, dans `index.html`, fonction `gate`).
