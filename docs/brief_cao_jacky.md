@@ -4,7 +4,7 @@ Objectif : plans cotés + STEP pour devis fermes (chaudronnerie, usinage, vitrie
 Base : principe constructif arrêté (site Les Veilleurs, section « Étude constructive de la niche »), 3 × 11 blocs (33), arrêté le 25-09-26.
 
 ## 1. Ensemble (fichier `aquarium_ensemble`)
-- Cavité utile : **2 204 × 333 × 120 mm** (L × H × P).
+- Cavité utile : **2 204 × 333 × ~106 mm** (L × H × P) — fond noir 4 + mousse 8 + bloc 100 ; les blocs affleurent la vitre, 6 mm devant la face du cadre.
 - Origine du repère : angle inférieur gauche intérieur, face avant du cadre = plan Z = 0.
 - Assemblage : caisson + cadre + toron + couvercle (longerons + vitre) + 2 tubes.
 
@@ -22,8 +22,11 @@ Base : principe constructif arrêté (site Les Veilleurs, section « Étude cons
 - 4 **longerons 60×24** en 316L usinés, **battée 32 × 19** côté intérieur (talon plein 28 × 24 en appui sur le cadre).
 - Assemblage d'angle : coupe d'onglet 45°, goujonné et collé ; ou angles usinés dans la masse (à proposer par l'atelier).
 - Perçages fraisés pour **vis M4×30 Torx T20** en vis-à-vis des taraudages du cadre (~110 vis).
-- Vitre **feuilletée extra-claire 66.2 (13 mm), couche antireflet sur la face extérieure**, bords polis, dimensions = ouverture de battée − 2 mm de jeu par côté. Collée dans la battée au **silicone structurel** (2 mm de fond + flanc, bande 30 mm), dépouillée de tout contact verre/métal.
+- Vitre **feuilletée extra-claire 66.2 (13 mm), couche antireflet sur la face extérieure**, bords polis, dimensions = ouverture de battée − 2 mm de jeu par côté. Posée dans la battée, sans collage, sur une **bande caoutchouc autocollante 30 × 1 mm** collée sur le fond de battée ; aucun contact verre/métal.
 - Cadre visible depuis l'extérieur : 60 mm (talon + battée). L'artiste souhaite le minimum : signaler toute possibilité de réduire à 50.
+
+## 3 bis. Niche dans la pierre
+- Le caisson est noyé dans le socle monobloc sur tout le pourtour ; battée de pierre **≈ 64 large × 32 profond** devant le cadre (jeu 4 mm), face de la pierre affleurant la face du longeron et la vitre. À reporter sur les plans « base mono bloc ».
 
 ## 4. Intérieur (fournitures, non usiné)
 - Fond noir : verre laqué noir 4 mm (option A) ou mousse silicone noire seule (option B) — laisser une réserve de 4 mm en profondeur.
