@@ -7,4 +7,6 @@ Dossier de construction de la niche métallique des cristaux K9 (site statique, 
 - `docs/` — note de principe v01 (PDF), brief CAO, séquence de montage, dessins (`docs/plans/`)
 - `vercel.json` — déploiement Vercel (preset Other), noindex
 
+Site : https://aquarium-k9.vercel.app (déploiement Vercel automatique à chaque push).
+
 Code d'accès de la page : `EVA` (côté client, dans `index.html`, fonction `gate`).
