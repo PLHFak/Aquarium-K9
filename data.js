@@ -1,11 +1,11 @@
 // Vitrine « aquarium » des cristaux — données du site (édition : modifier ce fichier, index.html ne change pas)
 window.DATA = {
-  version: "0.3",
+  version: "0.4",
   date: "25-09-2026",
   titre: "Vitrine « aquarium » des cristaux",
   sous_titre: "Les Veilleurs · Eva L'Hoest / EHlab · Beaufort 27, Westende — dossier de construction",
   contexte: {
-    texte: "Une niche métallique étanche fermée par une vitre, où 33 blocs de cristal K9 gravés (200 × 100 × 100 mm, ≈ 5 kg chacun) sont présentés sur fond noir, sous azote sec, éclairés par une seule rampe LED. Le caisson est livré vide, noyé dans le socle monobloc ; les cristaux sont posés sur place. Tout se démonte et s'entretient depuis une chambre de visite arrière.",
+    texte: "Une niche métallique étanche fermée par une vitre, où 33 blocs de cristal K9 gravés (200 × 100 × 100 mm, ≈ 5 kg chacun) sont présentés sur fond noir, sous azote sec, éclairés en option par une rampe LED en haut de la boîte. Le caisson est livré vide, noyé dans le socle monobloc ; les cristaux sont posés sur place. Tout se démonte et s'entretient depuis une chambre de visite arrière.",
     vues: [
       {src:"docs/plans/01_coupe_verticale.png", legende:"Coupe verticale de principe"},
       {src:"docs/plans/03_face_et_plan.png", legende:"Vue de face et plan cotés (3 × 11 blocs)"},
@@ -19,7 +19,7 @@ window.DATA = {
   },
   principe: [
     {t:"Caisson", d:"Tôle 316L 3 mm pliée en U, flasques soudées en cordon continu, cornières 40×40×4 à l'extérieur (cavité lisse), cadre avant plat 60×10 taraudé M4, dressé après soudage."},
-    {t:"Couvercle monobloc", d:"Vitre feuilletée extra-claire 66.2 (13 mm) collée au silicone structurel dans la battée 32×19 de longerons 60×24. Le talon du longeron vient en butée sur le cadre et calibre l'écrasement du toron EPDM Ø10 à ~30 %. Aucune vis dans le verre."},
+    {t:"Couvercle monobloc", d:"Vitre feuilletée extra-claire 66.2 (13 mm), couche antireflet sur la face extérieure, collée au silicone structurel dans la battée 32×19 de longerons 60×24. Le talon du longeron vient en butée sur le cadre et calibre l'écrasement du toron EPDM Ø10 à ~30 %. Aucune vis dans le verre."},
     {t:"Plaquage des blocs", d:"Mousse silicone cellules fermées (12 → 8 mm) au fond : les blocs s'appuient sur la vitre, sans lame d'air ni double réflexion. Fond noir : verre laqué ou mousse noire, à trancher sur échantillon."},
     {t:"Atmosphère", d:"Azote sec à pression ambiante par deux tubes Ø10 ramenés en chambre de visite : robinets, valve Schrader, dessiccant, vessie d'équilibrage ~1 L, témoin d'humidité. Le vide est écarté.", img:"docs/plans/04_circuit_gaz.png"},
     {t:"Recette", d:"−0,2 bar tenu 24 h avec perte < 50 mbar : en atelier à blanc, puis sur site après chargement."}
@@ -30,7 +30,7 @@ window.DATA = {
       ["Blocs","33 × (200 × 100 × 100) — ≈ 166 kg"],
       ["Cavité utile L × H × P","2 204 × 333 × 120"],
       ["Caisson / cadre visible","2 324 × 453 × ~135 — cadre 60 mm"],
-      ["Vitre 66.2","≈ 2 264 × 393 × 13 — ≈ 29 kg"],
+      ["Vitre feuilletée extra-claire 66.2, antireflet face ext.","≈ 2 264 × 393 × 13 — ≈ 29 kg"],
       ["Vis M4 (pas 50)","≈ 110"],
       ["Masse chargée","≈ 350 kg"]
     ],
@@ -54,20 +54,19 @@ window.DATA = {
   fournitures: [
     ["Tôle 316L 3 mm, cornières 40×40×4, plat 60×10","chaudronnerie inox"],
     ["Longerons 60×24 usinés à battée (4 longueurs)","atelier mécanique"],
-    ["Vitre feuilletée extra-claire 66.2, bords polis","vitrier (Dochy Glas, Saint-Gobain…)"],
+    ["Vitre feuilletée extra-claire 66.2 antireflet face 1 (Clearsight / OptiView / Luxar), bords polis","vitrier (Dochy Glas, Saint-Gobain…)"],
     ["Toron EPDM Ø10 vulcanisé en cadre (+1 rechange)","fournisseur de joints"],
     ["Silicone structurel (type Dow 993 / Sika SG-20)","vitrier"],
     ["Mousse silicone cellules fermées 12 mm, noire","fournisseur mousses techniques"],
     ["Verre laqué noir 4 mm (option fond)","vitrier"],
     ["~127 vis M4×30 fraisées Torx T20 inox A4","visserie"],
     ["2 tubes Ø10×1 inox, raccords à compression, 2 robinets, valve Schrader, vessie ~1 L, cartouche dessiccant, témoin d'humidité","fournitures pneumatiques / laboratoire"],
-    ["Rampe LED 3 W 3000 K IP67 + câble","lot éclairage solaire"]
+    ["Option : profilé LED IP67 24 V ~3 W 3000 K sous la paroi haute + piquage Ø6 presse-étoupe","lot éclairage solaire / atelier inox (fixations, piquage)"]
   ],
   points_ouverts: [
     "Fond noir : verre laqué noir 4 mm ou mousse silicone noire seule — échantillon à juger avec Eva.",
     "Toron plein (30 %) ou creux (50 %) ; Torx standard ou inviolable.",
     "Cadre visible 60 mm — l'atelier peut proposer 50 si la battée le permet.",
-    "Troisième piquage Ø6 pour le câble LED si l'éclairage intérieur est confirmé.",
     "Cote d'épaulement pierre devant le cadre — à caler sur « base mono bloc V00 »."
   ],
   documents: [
@@ -79,12 +78,13 @@ window.DATA = {
     {n:"Dossier du socle monobloc", u:"https://base-les-veilleurs.vercel.app"}
   ],
   prompt_cao: `Tu es un dessinateur CAO. À partir du brief ci-dessous, produis les plans cotés (3 vues + coupes AA/BB + éclaté) et les fichiers STEP/DXF de la vitrine « aquarium » des cristaux.
-Cavité utile 2 204 × 333 × 120 mm (33 blocs en 3 × 11). Caisson tôle 316L 3 mm pliée en U, flasques soudées, cornières 40×40×4 extérieures, cadre plat 60×10 taraudé M4 (axe à 15 du bord, pas 50), gorge 11×2 à 44,5 du bord. Couvercle : 4 longerons 60×24 à battée 32×19, vitre 66.2 (13 mm) collée en battée, vis M4×30 fraisées Torx. Deux piquages Ø10 en paroi arrière haute aux extrémités. Livrables : aquarium_ensemble.step/pdf, caisson.dxf (développé), longeron.dxf, vitre.dxf, tableau des masses.`,
+Cavité utile 2 204 × 333 × 120 mm (33 blocs en 3 × 11). Caisson tôle 316L 3 mm pliée en U, flasques soudées, cornières 40×40×4 extérieures, cadre plat 60×10 taraudé M4 (axe à 15 du bord, pas 50), gorge 11×2 à 44,5 du bord. Couvercle : 4 longerons 60×24 à battée 32×19, vitre feuilletée extra-claire 66.2 antireflet face extérieure (13 mm) collée en battée, vis M4×30 fraisées Torx. Deux piquages Ø10 en paroi arrière haute aux extrémités. Livrables : aquarium_ensemble.step/pdf, caisson.dxf (développé), longeron.dxf, vitre.dxf, tableau des masses.`,
   journal: [
     {d:"22-09-2026", t:"Dictée du principe « aquarium basculé » par Pierre ; première coupe et dimensionnement 3 × 13 (fil « Dossier technique architectural »)."},
     {d:"sept. 2026", t:"Étude constructive publiée sur le site principal : tôle pliée, longerons à battée, 104 vis, DXF/STEP ; vide écarté au profit de l'azote sec ; une seule rampe LED."},
     {d:"25-09-2026", t:"v0.1 — dossier de construction dédié : note de principe v01, cinq dessins, brief CAO, séquence de montage et essais, site ; dépôt GitHub PLHFak/Aquarium-K9."},
     {d:"25-09-2026", t:"v0.2 — 3 × 11 blocs arrêté (33). Dossier de consultation v02 pour menuiserie métallique inox : description pièce par pièce, nomenclature, lots à chiffrer, questions d'atelier ; dessins 06 (caisson) et 07 (profil longeron)."},
-    {d:"25-09-2026", t:"v0.3 — quatre vues 3D éclatées (avant, arrière, détail d'angle, assemblé) ajoutées au site et au dossier de consultation v02."}
+    {d:"25-09-2026", t:"v0.3 — quatre vues 3D éclatées (avant, arrière, détail d'angle, assemblé) ajoutées au site et au dossier de consultation v02."},
+    {d:"25-09-2026", t:"v0.4 — vitre précisée : feuilleté extra-clair 66.2 avec couche antireflet sur la face extérieure ; rampe LED en haut de la boîte passée en option 3 (fixations + piquage Ø6). Consultation v02.1."}
   ]
 };
