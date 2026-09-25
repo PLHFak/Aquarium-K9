@@ -92,6 +92,7 @@ Cavité utile 2 204 × 333 × 120 mm (33 blocs en 3 × 11). Caisson tôle 316L 3
     {d:"25-09-2026", t:"v0.4 — vitre précisée : feuilleté extra-clair 66.2 avec couche antireflet sur la face extérieure ; rampe LED en haut de la boîte passée en option 3 (fixations + piquage Ø6). Consultation v02.1."},
     {d:"25-09-2026", t:"v0.5 — cartouche technique en pied de page (artiste-maître d'œuvre, assistant électromécanique, n° de document, révision, date-heure, statut, mention légale) ; calendrier de consultation ; consultation v02.2 entièrement traduite (textes, tableaux, cartouche) en FR, AG, ND, DE — croquis légendés en français."},
     {d:"25-09-2026", t:"v0.6 — niche de pierre dessinée sur le pourtour (coupe et détail), battée de pierre 64 × 32 affleurant la vitre ; silicone retiré, vitre posée sur bande caoutchouc autocollante 1 × 30 mm ; profondeur caisson corrigée à ~106 (blocs affleurant la vitre) ; consultation v02.3."},
-    {d:"25-09-2026", t:"v0.7 — toron déplacé au tiers de la largeur du cadre côté intérieur (axe à 40 du bord extérieur), à l'écart du chant de la vitre ; dessins 01, 02, 07 et textes mis à jour."}
+    {d:"25-09-2026", t:"v0.7 — toron déplacé au tiers de la largeur du cadre côté intérieur (axe à 40 du bord extérieur), à l'écart du chant de la vitre ; dessins 01, 02, 07 et textes mis à jour."},
+    {d:"25-09-2026", t:"Site en ligne : https://aquarium-k9.vercel.app (code EVA), déploiement automatique à chaque push."}
   ]
 };
