@@ -22,14 +22,14 @@ Base : principe constructif arrêté (site Les Veilleurs, section « Étude cons
 - 4 **longerons 60×24** en 316L usinés, **battée 32 × 19** côté intérieur (talon plein 28 × 24 en appui sur le cadre).
 - Assemblage d'angle : coupe d'onglet 45°, goujonné et collé ; ou angles usinés dans la masse (à proposer par l'atelier).
 - Perçages fraisés pour **vis M4×30 Torx T20** en vis-à-vis des taraudages du cadre (~110 vis).
-- Vitre **feuilletée extra-claire 66.2 (13 mm)**, bords polis, dimensions = ouverture de battée − 2 mm de jeu par côté. Collée dans la battée au **silicone structurel** (2 mm de fond + flanc, bande 30 mm), dépouillée de tout contact verre/métal.
+- Vitre **feuilletée extra-claire 66.2 (13 mm), couche antireflet sur la face extérieure**, bords polis, dimensions = ouverture de battée − 2 mm de jeu par côté. Collée dans la battée au **silicone structurel** (2 mm de fond + flanc, bande 30 mm), dépouillée de tout contact verre/métal.
 - Cadre visible depuis l'extérieur : 60 mm (talon + battée). L'artiste souhaite le minimum : signaler toute possibilité de réduire à 50.
 
 ## 4. Intérieur (fournitures, non usiné)
 - Fond noir : verre laqué noir 4 mm (option A) ou mousse silicone noire seule (option B) — laisser une réserve de 4 mm en profondeur.
 - Mousse silicone cellules fermées 12 mm (→ ~8 mm comprimée) sur toute la face arrière.
 - Cales calibrées inox aux extrémités de chaque banc (jeu total 4 mm réparti).
-- Rampe LED 3 W / 3000 K sous le plafond, passage du câble par un troisième piquage Ø6 étanche (à ajouter si Eva confirme l'éclairage intérieur).
+- Option : profilé LED IP67 (~2 100 mm) sous la paroi haute, deux rails de fixation soudés, troisième piquage Ø6 + presse-étoupe en paroi arrière haute.
 
 ## 5. Livrables attendus
 1. `aquarium_ensemble.step` + `aquarium_ensemble.pdf` (3 vues + coupes AA/BB, éclaté).
