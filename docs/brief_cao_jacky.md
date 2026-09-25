@@ -14,7 +14,7 @@ Base : principe constructif arrêté (site Les Veilleurs, section « Étude cons
 - Cornières **40×40×4 soudées à l'extérieur** : 3 lignes horizontales au dos (à 20, 150, 280 mm), 4 raidisseurs verticaux répartis. La cavité reste lisse.
 - **Cadre avant plat 60×10** soudé sur tout le pourtour, face avant usinée/dressée après soudage (planéité ≤ 0,3 mm/m).
 - Cadre : trous **taraudés M4**, axe à 15 mm du bord extérieur, **pas 50 mm**, angles à 25 mm.
-- Gorge de positionnement du toron : **largeur 11, profondeur 2**, axe à 44,5 mm du bord extérieur, continue (angles rayon 10).
+- Gorge de positionnement du toron : **largeur 11, profondeur 2**, axe à 40 mm du bord extérieur (tiers côté intérieur, à l'écart du chant de la vitre), continue (angles rayon 10).
 - 2 piquages **tube inox Ø10 × 1** soudés en paroi arrière haute, aux deux extrémités (axe à 80 mm des flasques), longueur 200 mm droits, bouts lisses pour raccord à compression.
 - 2 pattes de manutention démontables (M8) sur le haut.
 
