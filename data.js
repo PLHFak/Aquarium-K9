@@ -70,10 +70,10 @@ window.DATA = {
     "Cote d'épaulement pierre devant le cadre — à caler sur « base mono bloc V00 »."
   ],
   documents: [
-    {n:"Dossier de consultation v02.2 (PDF, 7 pages) — pour avis d'atelier et estimation de prix", u:"docs/consultation_aquarium_v02.pdf"},
-    {n:"Idem, cartouche anglais (.AG)", u:"docs/consultation_aquarium_v02_AG.pdf"},
-    {n:"Idem, cartouche néerlandais (.ND)", u:"docs/consultation_aquarium_v02_ND.pdf"},
-    {n:"Idem, cartouche allemand (.DE)", u:"docs/consultation_aquarium_v02_DE.pdf"},
+    {n:"Dossier de consultation v02.2 — FR (PDF, 8 pages) — pour avis d'atelier et estimation de prix", u:"docs/consultation_aquarium_v02.pdf"},
+    {n:"Tender documentation v02.2 — English (.AG)", u:"docs/consultation_aquarium_v02_AG.pdf"},
+    {n:"Consultatiedossier v02.2 — Nederlands (.ND)", u:"docs/consultation_aquarium_v02_ND.pdf"},
+    {n:"Ausschreibungsunterlagen v02.2 — Deutsch (.DE)", u:"docs/consultation_aquarium_v02_DE.pdf"},
     {n:"Note de principe v01 (PDF, 4 pages — variante 13 blocs, historique)", u:"docs/note_aquarium_v01.pdf"},
     {n:"Brief CAO pour Jacky (Markdown)", u:"docs/brief_cao_jacky.md"},
     {n:"Séquence de montage et essais (Markdown)", u:"docs/sequence_montage_essais.md"},
@@ -89,6 +89,6 @@ Cavité utile 2 204 × 333 × 120 mm (33 blocs en 3 × 11). Caisson tôle 316L 3
     {d:"25-09-2026", t:"v0.2 — 3 × 11 blocs arrêté (33). Dossier de consultation v02 pour menuiserie métallique inox : description pièce par pièce, nomenclature, lots à chiffrer, questions d'atelier ; dessins 06 (caisson) et 07 (profil longeron)."},
     {d:"25-09-2026", t:"v0.3 — quatre vues 3D éclatées (avant, arrière, détail d'angle, assemblé) ajoutées au site et au dossier de consultation v02."},
     {d:"25-09-2026", t:"v0.4 — vitre précisée : feuilleté extra-clair 66.2 avec couche antireflet sur la face extérieure ; rampe LED en haut de la boîte passée en option 3 (fixations + piquage Ø6). Consultation v02.1."},
-    {d:"25-09-2026", t:"v0.5 — cartouche technique en pied de page (artiste-maître d'œuvre, assistant électromécanique, n° de document, révision, date-heure, statut, mention légale) ; calendrier de consultation ; consultation v02.2 en FR, AG, ND, DE."}
+    {d:"25-09-2026", t:"v0.5 — cartouche technique en pied de page (artiste-maître d'œuvre, assistant électromécanique, n° de document, révision, date-heure, statut, mention légale) ; calendrier de consultation ; consultation v02.2 entièrement traduite (textes, tableaux, cartouche) en FR, AG, ND, DE — croquis légendés en français."}
   ]
 };
