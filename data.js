@@ -1,6 +1,6 @@
 // Vitrine « aquarium » des cristaux — données du site (édition : modifier ce fichier, index.html ne change pas)
 window.DATA = {
-  version: "0.5",
+  version: "0.6",
   date: "25-09-2026",
   titre: "Vitrine « aquarium » des cristaux",
   sous_titre: "Les Veilleurs · Eva L'Hoest · Beaufort 27 — dossier de construction",
@@ -19,7 +19,7 @@ window.DATA = {
   },
   principe: [
     {t:"Caisson", d:"Tôle 316L 3 mm pliée en U, flasques soudées en cordon continu, cornières 40×40×4 à l'extérieur (cavité lisse), cadre avant plat 60×10 taraudé M4, dressé après soudage."},
-    {t:"Couvercle monobloc", d:"Vitre feuilletée extra-claire 66.2 (13 mm), couche antireflet sur la face extérieure, collée au silicone structurel dans la battée 32×19 de longerons 60×24. Le talon du longeron vient en butée sur le cadre et calibre l'écrasement du toron EPDM Ø10 à ~30 %. Aucune vis dans le verre."},
+    {t:"Couvercle monobloc", d:"Vitre feuilletée extra-claire 66.2 (13 mm), couche antireflet sur la face extérieure, posée sans collage dans la battée 32×19 de longerons 60×24, sur une bande caoutchouc autocollante de ~1 mm × 30 mm. Le talon du longeron vient en butée sur le cadre et calibre l'écrasement du toron EPDM Ø10 à ~30 %. Aucune vis dans le verre."},
     {t:"Plaquage des blocs", d:"Mousse silicone cellules fermées (12 → 8 mm) au fond : les blocs s'appuient sur la vitre, sans lame d'air ni double réflexion. Fond noir : verre laqué ou mousse noire, à trancher sur échantillon."},
     {t:"Atmosphère", d:"Azote sec à pression ambiante par deux tubes Ø10 ramenés en chambre de visite : robinets, valve Schrader, dessiccant, vessie d'équilibrage ~1 L, témoin d'humidité. Le vide est écarté.", img:"docs/plans/04_circuit_gaz.png"},
     {t:"Recette", d:"−0,2 bar tenu 24 h avec perte < 50 mbar : en atelier à blanc, puis sur site après chargement."}
@@ -28,20 +28,21 @@ window.DATA = {
     colonnes:["Élément", "Cote (3 × 11 blocs — arrêté le 25-09-26)"],
     lignes:[
       ["Blocs","33 × (200 × 100 × 100) — ≈ 166 kg"],
-      ["Cavité utile L × H × P","2 204 × 333 × 120"],
-      ["Caisson / cadre visible","2 324 × 453 × ~135 — cadre 60 mm"],
+      ["Cavité utile L × H × P","2 204 × 333 × ~106 (blocs affleurant la vitre)"],
+      ["Niche dans la pierre","battée ≈ 64 × 32 sur le pourtour, face de pierre affleurant la vitre"],
+      ["Caisson / cadre visible","2 324 × 453 × ~138 — cadre 60 mm"],
       ["Vitre feuilletée extra-claire 66.2, antireflet face ext.","≈ 2 264 × 393 × 13 — ≈ 29 kg"],
       ["Vis M4 (pas 50)","≈ 110"],
       ["Masse chargée","≈ 350 kg"]
     ],
-    note:"Profondeur utile 120 = bloc 100 + mousse comprimée 8 + réserve 4 pour le fond noir + jeu. Le couvercle ajoute 24 mm devant le cadre."
+    note:"Profondeur ~106 = fond noir 4 + mousse comprimée 8 + bloc 100 ; les blocs dépassent de 6 mm la face du cadre et affleurent la vitre. Le longeron ajoute 29 mm ; la pierre affleure sa face."
   },
   montage: {
     img:"docs/plans/05_sequence_montage.png",
     etapes:[
       ["Chaudronnerie","pliage U, flasques, cornières ext., cadre 60×10, tubes, dressage","planéité cadre ≤ 0,3 mm/m ; ressuage"],
       ["Usinage","longerons à battée, gorge, perçages, angles","essai à blanc sur le caisson réel"],
-      ["Vitrerie","vitre 66.2 extra-claire collée en battée, cure 7 j","aucun contact verre/métal"],
+      ["Vitrerie","vitre 66.2 extra-claire posée en battée sur bande caoutchouc","aucun contact verre/métal"],
       ["Essai atelier","couvercle vissé sans blocs, −0,2 bar","perte < 50 mbar / 24 h"],
       ["Livraison socle","caisson vide, couvercle protégé, tubes obturés","position et niveau avant scellement"],
       ["Chambre de visite","robinets, Schrader, dessiccant, vessie, témoin","étanchéité des raccords"],
@@ -56,7 +57,7 @@ window.DATA = {
     ["Longerons 60×24 usinés à battée (4 longueurs)","atelier mécanique"],
     ["Vitre feuilletée extra-claire 66.2 antireflet face 1 (Clearsight / OptiView / Luxar), bords polis","vitrier (Dochy Glas, Saint-Gobain…)"],
     ["Toron EPDM Ø10 vulcanisé en cadre (+1 rechange)","fournisseur de joints"],
-    ["Silicone structurel (type Dow 993 / Sika SG-20)","vitrier"],
+    ["Bande caoutchouc autocollante 30 × 1 mm (~6 m)","fournisseur de joints"],
     ["Mousse silicone cellules fermées 12 mm, noire","fournisseur mousses techniques"],
     ["Verre laqué noir 4 mm (option fond)","vitrier"],
     ["~127 vis M4×30 fraisées Torx T20 inox A4","visserie"],
@@ -81,7 +82,7 @@ window.DATA = {
     {n:"Dossier du socle monobloc", u:"https://base-les-veilleurs.vercel.app"}
   ],
   prompt_cao: `Tu es un dessinateur CAO. À partir du brief ci-dessous, produis les plans cotés (3 vues + coupes AA/BB + éclaté) et les fichiers STEP/DXF de la vitrine « aquarium » des cristaux.
-Cavité utile 2 204 × 333 × 120 mm (33 blocs en 3 × 11). Caisson tôle 316L 3 mm pliée en U, flasques soudées, cornières 40×40×4 extérieures, cadre plat 60×10 taraudé M4 (axe à 15 du bord, pas 50), gorge 11×2 à 44,5 du bord. Couvercle : 4 longerons 60×24 à battée 32×19, vitre feuilletée extra-claire 66.2 antireflet face extérieure (13 mm) collée en battée, vis M4×30 fraisées Torx. Deux piquages Ø10 en paroi arrière haute aux extrémités. Livrables : aquarium_ensemble.step/pdf, caisson.dxf (développé), longeron.dxf, vitre.dxf, tableau des masses.`,
+Cavité utile 2 204 × 333 × 120 mm (33 blocs en 3 × 11). Caisson tôle 316L 3 mm pliée en U, flasques soudées, cornières 40×40×4 extérieures, cadre plat 60×10 taraudé M4 (axe à 15 du bord, pas 50), gorge 11×2 à 44,5 du bord. Couvercle : 4 longerons 60×24 à battée 32×19, vitre feuilletée extra-claire 66.2 antireflet face extérieure (13 mm) posée en battée sur bande caoutchouc 1 mm, vis M4×30 ; caisson noyé dans le socle de pierre, battée de pierre 64×32 sur le pourtour fraisées Torx. Deux piquages Ø10 en paroi arrière haute aux extrémités. Livrables : aquarium_ensemble.step/pdf, caisson.dxf (développé), longeron.dxf, vitre.dxf, tableau des masses.`,
   journal: [
     {d:"22-09-2026", t:"Principe « aquarium basculé » dicté ; première coupe et dimensionnement 3 × 13 (fil « Dossier technique architectural »)."},
     {d:"sept. 2026", t:"Étude constructive publiée sur le site principal : tôle pliée, longerons à battée, 104 vis, DXF/STEP ; vide écarté au profit de l'azote sec ; une seule rampe LED."},
@@ -89,6 +90,7 @@ Cavité utile 2 204 × 333 × 120 mm (33 blocs en 3 × 11). Caisson tôle 316L 3
     {d:"25-09-2026", t:"v0.2 — 3 × 11 blocs arrêté (33). Dossier de consultation v02 pour menuiserie métallique inox : description pièce par pièce, nomenclature, lots à chiffrer, questions d'atelier ; dessins 06 (caisson) et 07 (profil longeron)."},
     {d:"25-09-2026", t:"v0.3 — quatre vues 3D éclatées (avant, arrière, détail d'angle, assemblé) ajoutées au site et au dossier de consultation v02."},
     {d:"25-09-2026", t:"v0.4 — vitre précisée : feuilleté extra-clair 66.2 avec couche antireflet sur la face extérieure ; rampe LED en haut de la boîte passée en option 3 (fixations + piquage Ø6). Consultation v02.1."},
-    {d:"25-09-2026", t:"v0.5 — cartouche technique en pied de page (artiste-maître d'œuvre, assistant électromécanique, n° de document, révision, date-heure, statut, mention légale) ; calendrier de consultation ; consultation v02.2 entièrement traduite (textes, tableaux, cartouche) en FR, AG, ND, DE — croquis légendés en français."}
+    {d:"25-09-2026", t:"v0.5 — cartouche technique en pied de page (artiste-maître d'œuvre, assistant électromécanique, n° de document, révision, date-heure, statut, mention légale) ; calendrier de consultation ; consultation v02.2 entièrement traduite (textes, tableaux, cartouche) en FR, AG, ND, DE — croquis légendés en français."},
+    {d:"25-09-2026", t:"v0.6 — niche de pierre dessinée sur le pourtour (coupe et détail), battée de pierre 64 × 32 affleurant la vitre ; silicone retiré, vitre posée sur bande caoutchouc autocollante 1 × 30 mm ; profondeur caisson corrigée à ~106 (blocs affleurant la vitre) ; consultation v02.3."}
   ]
 };
