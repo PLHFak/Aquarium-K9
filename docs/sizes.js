@@ -1,10 +1,12 @@
 // tailles des fichiers (généré) — utilisé par lv.js pour l'affichage des téléchargements
 window.SIZES={
+"docs/appel_offres_ateliers.xlsx": 11033,
 "docs/brief_cao_jacky.md": 3946,
 "docs/consultation_aquarium_v02.pdf": 1239863,
 "docs/consultation_aquarium_v02_AG.pdf": 1238949,
 "docs/consultation_aquarium_v02_DE.pdf": 1241563,
 "docs/consultation_aquarium_v02_ND.pdf": 1239393,
+"docs/lv_analytics.sql": 3945,
 "docs/note_aquarium_v01.pdf": 465878,
 "docs/pdf/LV-AQ-3D-01_eclate_avant.pdf": 196609,
 "docs/pdf/LV-AQ-3D-02_eclate_arriere.pdf": 169028,
@@ -29,7 +31,7 @@ window.SIZES={
 "docs/plans/3D_3_assemble.png": 105839,
 "docs/plans/3D_4_detail_angle.png": 194845,
 "docs/sequence_montage_essais.md": 1639,
-"docs/sizes.js": 2120,
+"docs/sizes.js": 2143,
 "docs/thumbs/01_coupe_verticale.jpg": 21637,
 "docs/thumbs/02_detail_serrage.jpg": 17841,
 "docs/thumbs/03_face_et_plan.jpg": 8066,

@@ -4,8 +4,8 @@
 const L = (fr, en, nl, de) => ({fr, en, nl, de});
 
 window.DATA = {
-  version: "0.8",
-  date: "25-09-2026",
+  version: "0.9",
+  date: "28-09-2026",
   titre: L("Vitrine « aquarium » des cristaux", "Crystal “aquarium” showcase", "Kristallen “aquarium”-vitrine", "Kristall-Vitrine „Aquarium“"),
   sous_titre: L("Les Veilleurs · Eva L'Hoest · Beaufort 27 — dossier de construction", "Les Veilleurs · Eva L'Hoest · Beaufort 27 — construction file", "Les Veilleurs · Eva L'Hoest · Beaufort 27 — bouwdossier", "Les Veilleurs · Eva L'Hoest · Beaufort 27 — Baudossier"),
   cartouche: {
@@ -18,6 +18,7 @@ window.DATA = {
     {id:"principe", label:L("Principe","Principle","Principe","Prinzip")},
     {id:"dimensions", label:L("Dimensions","Dimensions","Afmetingen","Abmessungen")},
     {id:"montage", label:L("Montage & essais","Assembly & tests","Montage & proeven","Montage & Prüfungen")},
+    {id:"ateliers", label:L("Ateliers","Workshops","Ateliers","Werkstätten")},
     {id:"fournitures", label:L("Fournitures","Supplies","Leveringen","Lieferungen")},
     {id:"ouverts", label:L("Points ouverts","Open points","Open punten","Offene Punkte")},
     {id:"documents", label:L("Documents","Documents","Documenten","Dokumente")},
@@ -115,6 +116,278 @@ window.DATA = {
                  "Stickstoff-Nachspülung ohne Demontage über die beiden Hähne; Trockenmittel alle 2 Jahre; vollständige Demontage möglich, Ersatz-Rundschnur vorsehen.")
   },
 
+  ateliers: {
+    titre: L("Ateliers à consulter","Workshops to consult","Te raadplegen ateliers","Anzufragende Werkstätten"),
+    intro: L("Vingt petits ateliers de chaudronnerie inox, métallerie d'art et construction navale repérés le 28-09-2026 en Wallonie (8), en Flandre (7) et dans le Nord de la France (5). Trois vagues : la première réunit les profils les plus proches (art, inox étanche, proximité de la côte). Aucun site ne mentionne le 316L ni la passivation : à préciser dans la demande. Fiches en français.",
+             "Twenty small stainless fabrication, art metalwork and shipbuilding workshops identified on 28-09-2026 in Wallonia (8), Flanders (7) and northern France (5). Three waves: the first gathers the closest profiles (art, watertight stainless, proximity to the coast). No website mentions 316L or passivation: to be specified in the request. Sheets in French.",
+             "Twintig kleine ateliers (inox plaatwerk, kunstsmeden, scheepsbouw) gevonden op 28-09-2026 in Wallonië (8), Vlaanderen (7) en Noord-Frankrijk (5). Drie golven: de eerste bundelt de dichtste profielen (kunst, waterdicht inox, nabijheid van de kust). Geen enkele site vermeldt 316L of passivering: te preciseren in de aanvraag. Fiches in het Frans.",
+             "Zwanzig kleine Werkstätten (Edelstahl-Blechbau, Kunstschmiede, Schiffbau), ermittelt am 28-09-2026 in Wallonien (8), Flandern (7) und Nordfrankreich (5). Drei Wellen: die erste versammelt die passendsten Profile (Kunst, dichter Edelstahl, Küstennähe). Keine Website nennt 316L oder Passivierung: in der Anfrage zu präzisieren. Steckbriefe auf Französisch."),
+    vague: L("Vague","Wave","Golf","Welle"),
+    colonnes:[L("#","#","#","#"), L("Atelier","Workshop","Atelier","Werkstatt"), L("Où","Where","Waar","Wo"), L("Taille","Size","Grootte","Größe"), L("Spécialités","Specialities","Specialiteiten","Spezialitäten"), L("Référence proche","Closest reference","Vergelijkbare referentie","Nächste Referenz"), L("Contact","Contact","Contact","Kontakt"), L("Pourquoi lui","Why","Waarom","Warum")],
+    items: [
+    {
+        "rang": 1,
+        "vague": 1,
+        "nom": "Melens & Dejardin",
+        "ville": "Jupille-sur-Meuse (Liège)",
+        "region": "Wallonie",
+        "site": "https://www.melensdejardin.be/",
+        "taille": "~10 pers., familiale",
+        "spec": "chaudronnerie, pliage 4 m, cintrage, plasma, soudure ; acier, corten, alu, inox",
+        "ref": "sculptures Arne Quinze, Delphine Boël, Fred Eerdekens, Bernar Venet ; pièces nautiques",
+        "contact": "secretariat@melensdejardin.be · +32 4 362 62 20",
+        "pourquoi": "seule pratique wallonne avérée d'œuvres monumentales pour artistes ; vérifier le TIG inox fin"
+    },
+    {
+        "rang": 2,
+        "vague": 1,
+        "nom": "Inoxytech (ICRB)",
+        "ville": "Kuurne (Courtrai)",
+        "region": "Flandre",
+        "site": "https://www.inoxytech.be/",
+        "taille": "~10 ETP",
+        "spec": "inox exclusivement ; tôlerie et structures sur mesure ; pharma, salles blanches, agro",
+        "ref": "pass-boxes et mobilier inox hygiéniques = caissons pliés-soudés étanches",
+        "contact": "info@inoxytech.be · +32 56 43 93 93",
+        "pourquoi": "le profil technique exact : 316L, pliage, soudure propre, délais courts"
+    },
+    {
+        "rang": 3,
+        "vague": 1,
+        "nom": "Moker",
+        "ville": "Boom (Anvers)",
+        "region": "Flandre",
+        "site": "https://www.moker.be/",
+        "taille": "< 10 pers., fondé 1987",
+        "spec": "métal pour l'art, l'architecture et le design ; acier, inox, alu",
+        "ref": "tour de Guillaume Bijl à De Haan (Beaufort) ; Dan Graham, Richard Deacon, Luk Van Soom, Middelheim",
+        "contact": "+32 3 888 96 86 · formulaire",
+        "pourquoi": "seul atelier flamand prouvé sur Beaufort et les musées ; 1 h 30 de la côte"
+    },
+    {
+        "rang": 4,
+        "vague": 1,
+        "nom": "Metaalcomfort",
+        "ville": "Ostende",
+        "region": "Flandre",
+        "site": "https://www.metaalcomfort.be/",
+        "taille": "~8 ETP, familiale",
+        "spec": "acier, inox, alu ; laser, pliage, soudure, sablage, poudrage en interne",
+        "ref": "constructions inox sur mesure (mobilier, intérieur)",
+        "contact": "info@metaalcomfort.be · +32 59 80 54 60",
+        "pourquoi": "à 10 min de Westende : pose, essais et SAV sur 10 ans"
+    },
+    {
+        "rang": 5,
+        "vague": 1,
+        "nom": "Made in Inox",
+        "ville": "Watou (Poperinge)",
+        "region": "Flandre",
+        "site": "https://www.madeininox.be/",
+        "taille": "10-19 pers.",
+        "spec": "inox sur mesure pour particuliers, architectes, designers, industrie ; rubrique « Kunst »",
+        "ref": "travaux pour l'art (page dédiée, à vérifier)",
+        "contact": "info@madeininox.be · +32 57 42 31 39",
+        "pourquoi": "atelier 100 % inox du Westhoek qui revendique le travail pour l'art ; 45 min de la côte"
+    },
+    {
+        "rang": 6,
+        "vague": 1,
+        "nom": "ADCL — Chaudronnerie du Littoral",
+        "ville": "Dunkerque",
+        "region": "Nord France",
+        "site": "https://adcl-industries.fr/",
+        "taille": "< 10 salariés, depuis 2002",
+        "spec": "jet d'eau, pliage, mécano-soudure ; naval, portuaire, agro, pharma",
+        "ref": "ensembles mécano-soudés naval / portuaire",
+        "contact": "contact@adcl-industries.fr · +33 3 28 51 10 46",
+        "pourquoi": "découpe + pliage + soudure en interne, culture navale, le plus proche de la digue côté France"
+    },
+    {
+        "rang": 7,
+        "vague": 2,
+        "nom": "Ateliers Charles Webber",
+        "ville": "Châtelet (Hainaut)",
+        "region": "Wallonie",
+        "site": "https://www.chaudronnerie-webber.be/",
+        "taille": "15 pers., 3 000 m²",
+        "spec": "chaudronnerie, construction métallique, cuves inox",
+        "ref": "cuves inox (étanchéité)",
+        "contact": "+32 71 38 42 59",
+        "pourquoi": "chaudronnerie inox étanche en PME ; à tester sur la finition"
+    },
+    {
+        "rang": 8,
+        "vague": 2,
+        "nom": "Ateliers Meurice",
+        "ville": "Montignies-sur-Sambre (Hainaut)",
+        "region": "Wallonie",
+        "site": "https://ateliers-meurice.be/",
+        "taille": "non trouvé",
+        "spec": "TIG inox/hastelloy, mécano-soudure, usinage (tournage, fraisage)",
+        "ref": "ensembles mécano-soudés industriels",
+        "contact": "info@ateliers-meurice.be · +32 71 30 72 19",
+        "pourquoi": "seul Wallon avec TIG inox + usinage interne : longerons à battée et cadre taraudé"
+    },
+    {
+        "rang": 9,
+        "vague": 2,
+        "nom": "IDP Shipyard",
+        "ville": "Ostende",
+        "region": "Flandre",
+        "site": "https://www.idp-shipyard.be/",
+        "taille": "~21 ETP, fondé 1922",
+        "spec": "chantier naval : construction, réparation, fraisage CNC",
+        "ref": "navires de travail, offshore",
+        "contact": "idp@idp-shipyard.be · +32 59 32 18 64",
+        "pourquoi": "l'étanchéité en milieu salin est leur quotidien ; pièce peut-être « petite » pour eux"
+    },
+    {
+        "rang": 10,
+        "vague": 2,
+        "nom": "BMCI — Boulogne Mécanique Chaudronnerie Inox",
+        "ville": "Saint-Martin-Boulogne",
+        "region": "Nord France",
+        "site": "https://www.bmc-inox.fr/",
+        "taille": "6-9 salariés",
+        "spec": "inox agroalimentaire (tuyauteries), garde-corps, ouvrages décoratifs",
+        "ref": "tuyauteries alimentaires inox",
+        "contact": "+33 6 50 83 36 94",
+        "pourquoi": "pur spécialiste inox agro, TIG soigné, bassin maritime"
+    },
+    {
+        "rang": 11,
+        "vague": 2,
+        "nom": "La Manufacture du Métal",
+        "ville": "Noyelles-lès-Seclin (Lille)",
+        "region": "Nord France",
+        "site": "https://manufacture-metal.fr/",
+        "taille": "6-9 salariés",
+        "spec": "agencement, mobilier métallique, tôlerie ; acier, inox, laiton",
+        "ref": "sculpture commémorative extérieure à Vimy ; mobilier pour designers",
+        "contact": "cb@manufacture-metal.fr · +33 3 20 32 19 65",
+        "pourquoi": "pièce d'art extérieure référencée + finition design ; vérifier inox épais étanche"
+    },
+    {
+        "rang": 12,
+        "vague": 2,
+        "nom": "Prosoudure",
+        "ville": "Verlaine (Liège)",
+        "region": "Wallonie",
+        "site": "https://www.prosoudure.be/",
+        "taille": "non trouvé, ~20 ans",
+        "spec": "laser, pliage CNC, tuyauterie inox, EN 1090-2, montage sur site",
+        "ref": "structure pour écran LED, objets d'art corten",
+        "contact": "info@prosoudure.be · +32 498 27 64 41",
+        "pourquoi": "chaîne complète laser → pliage → soudure → montage, certifiée EN 1090"
+    },
+    {
+        "rang": 13,
+        "vague": 2,
+        "nom": "MV Soudure",
+        "ville": "Ghlin (Mons)",
+        "region": "Wallonie",
+        "site": "https://www.mvsoudure.be/",
+        "taille": "petit atelier",
+        "spec": "TIG/MIG inox, pliage, plasma CNC, mobilier design ; garantie 10 ans",
+        "ref": "Pairi Daiza (serre Edenya), SNCB",
+        "contact": "info@mvsoudure.be · +32 491 24 96 26",
+        "pourquoi": "TIG inox + pliage, références lieu public, garantie 10 ans"
+    },
+    {
+        "rang": 14,
+        "vague": 3,
+        "nom": "Metaalwerken Vanthuyne",
+        "ville": "Nieuport",
+        "region": "Flandre",
+        "site": "https://www.vanthuynenv.be/",
+        "taille": "~4 ETP, familiale",
+        "spec": "métal/inox/alu, tôlerie, tournage-fraisage, soudure",
+        "ref": "escaliers, garde-corps, pièces diverses",
+        "contact": "info@vanthuynenv.be · +32 58 23 78 84",
+        "pourquoi": "micro-atelier côtier qui cumule tôlerie et usinage"
+    },
+    {
+        "rang": 15,
+        "vague": 3,
+        "nom": "D'ART Design",
+        "ville": "Steenwerck (Nord)",
+        "region": "Nord France",
+        "site": "https://dartdesign.fr/",
+        "taille": "artisanal",
+        "spec": "métallerie fine design, TIG inox ; intervient en Belgique",
+        "ref": "mobilier et pièces sur mesure",
+        "contact": "Julien@dartdesign.fr · +33 6 03 33 38 95",
+        "pourquoi": "sensibilité design + habitude de la Belgique"
+    },
+    {
+        "rang": 16,
+        "vague": 3,
+        "nom": "Tecno Art",
+        "ville": "Kalmthout (Anvers)",
+        "region": "Flandre",
+        "site": "https://tecnoart.be/",
+        "taille": "~3,5 ETP, fondé 1997",
+        "spec": "acier/inox pour l'espace public : mobilier urbain, abris, installations artistiques",
+        "ref": "rubrique « Kunstwerken »",
+        "contact": "formulaire sur site",
+        "pourquoi": "mobilier urbain vandal-resistant pour communes"
+    },
+    {
+        "rang": 17,
+        "vague": 3,
+        "nom": "ConceptInox",
+        "ville": "La Bruyère (Namur)",
+        "region": "Wallonie",
+        "site": "https://conceptinox.be/",
+        "taille": "artisanal",
+        "spec": "inox/acier/alu sur mesure, polissage en atelier et sur site ; pharma",
+        "ref": "mobilier inox, travaux pharma",
+        "contact": "+32 478 95 68 72",
+        "pourquoi": "inox propre niveau pharma + polissage intégré"
+    },
+    {
+        "rang": 18,
+        "vague": 3,
+        "nom": "Luc Martin Soudure",
+        "ville": "Louveigné (Sprimont)",
+        "region": "Wallonie",
+        "site": "https://www.lucmartinsoudure.be/",
+        "taille": "petit atelier",
+        "spec": "ferronnier d'art, spécialiste inox, TIG/MIG, mobilier inox design",
+        "ref": "mobilier inox sur mesure",
+        "contact": "inoxmartin@gmail.com · +32 474 94 06 01",
+        "pourquoi": "spécialiste inox design tout près de Chaudfontaine"
+    },
+    {
+        "rang": 19,
+        "vague": 3,
+        "nom": "Atelier Degueldre",
+        "ville": "Hermalle-sous-Huy",
+        "region": "Wallonie",
+        "site": "https://atelierdegueldre.be/",
+        "taille": "6 pers., familiale",
+        "spec": "escaliers, garde-corps inox, corten, finitions haut de gamme",
+        "ref": "garde-corps inox extérieurs",
+        "contact": "info@atelierdegueldre.be · +32 85 41 21 23",
+        "pourquoi": "taille idéale et culture de la finition ; hors gamme habituelle"
+    },
+    {
+        "rang": 20,
+        "vague": 3,
+        "nom": "KAIROS",
+        "ville": "Calais",
+        "region": "Nord France",
+        "site": "https://www.kairos-hdf.com/",
+        "taille": "non trouvé",
+        "spec": "chaudronnerie sur plan, carters, cuves, bureau d'études CAO, pose",
+        "ref": "carters industriels",
+        "contact": "+33 3 21 96 07 28",
+        "pourquoi": "profil « caisson sur plan » avec BE intégré, 40 min de la côte belge"
+    }
+]
+  },
+
   fournitures: {
     titre: L("Fournitures et filières","Supplies and sourcing","Leveringen en kanalen","Lieferungen und Bezugsquellen"),
     colonnes:[L("Fourniture","Supply","Levering","Lieferung"), L("Filière","Source","Kanaal","Bezugsquelle")],
@@ -182,6 +455,7 @@ Cavité utile 2 204 × 333 × 120 mm (33 blocs en 3 × 11). Caisson tôle 316L 3
     ]},
     {groupe: L("Notes et briefs","Notes and briefs","Nota's en briefings","Notizen und Briefings"), items:[
       {id:"LV-AQ-NOTE-01", rev:"1", date:"25-09-26", statut:"HISTORIQUE", pages:5, thumb:"docs/thumbs/note_v01.jpg", titre:L("Note de principe v01 (variante 13 blocs, historique)","Principle note v01 (13-block variant, superseded)","Principenota v01 (variant 13 blokken, vervallen)","Grundsatznotiz v01 (Variante 13 Blöcke, überholt)"), files:[{fmt:"PDF", u:"docs/note_aquarium_v01.pdf"}]},
+      {id:"LV-AQ-AO-01", rev:"1", date:"28-09-26", statut:"CONSULTATION", titre:L("Appel d'offres — tableau de suivi des 20 ateliers (Excel)","Call for tenders — tracking sheet of the 20 workshops (Excel)","Aanbesteding — opvolgtabel van de 20 ateliers (Excel)","Ausschreibung — Verfolgungstabelle der 20 Werkstätten (Excel)"), files:[{fmt:"XLSX", u:"docs/appel_offres_ateliers.xlsx"}]},
       {id:"LV-AQ-CAO-01", rev:"1", date:"25-09-26", statut:"ÉTUDE", titre:L("Brief CAO pour Jacky (Markdown, FR)","CAD brief for Jacky (Markdown, French)","CAD-briefing voor Jacky (Markdown, Frans)","CAD-Briefing für Jacky (Markdown, Französisch)"), files:[{fmt:"MD", u:"docs/brief_cao_jacky.md"}]},
       {id:"LV-AQ-MONT-01", rev:"1", date:"25-09-26", statut:"ÉTUDE", titre:L("Séquence de montage et essais (Markdown, FR)","Assembly sequence and tests (Markdown, French)","Montagevolgorde en proeven (Markdown, Frans)","Montageablauf und Prüfungen (Markdown, Französisch)"), files:[{fmt:"MD", u:"docs/sequence_montage_essais.md"}]}
     ]},
@@ -203,6 +477,7 @@ Cavité utile 2 204 × 333 × 120 mm (33 blocs en 3 × 11). Caisson tôle 316L 3
     {d:"25-09-2026", t:L("v0.6 — niche de pierre dessinée sur le pourtour (coupe et détail), battée de pierre 64 × 32 affleurant la vitre ; silicone retiré, vitre posée sur bande caoutchouc autocollante 1 × 30 mm ; profondeur caisson corrigée à ~106 (blocs affleurant la vitre) ; consultation v02.3.","v0.6 — stone niche drawn all round (section and detail), 64 × 32 stone rebate flush with the glass; silicone removed, glass laid on 1 × 30 mm self-adhesive rubber strip; casing depth corrected to ~106 (blocks flush with the glass); tender v02.3.","v0.6 — steennis rondom getekend (doorsnede en detail), steensponning 64 × 32 gelijk met het glas; silicone verwijderd, glas op zelfklevende rubberband 1 × 30 mm; kastdiepte gecorrigeerd naar ~106 (blokken gelijk met het glas); consultatie v02.3.","v0.6 — Steinnische umlaufend gezeichnet (Schnitt und Detail), Steinfalz 64 × 32 bündig mit der Scheibe; Silikon entfernt, Glas auf selbstklebendem Gummiband 1 × 30 mm; Kastentiefe auf ~106 korrigiert (Blöcke bündig mit der Scheibe); Ausschreibung v02.3.")},
     {d:"25-09-2026", t:L("v0.7 — toron déplacé au tiers de la largeur du cadre côté intérieur (axe à 40 du bord extérieur), à l'écart du chant de la vitre ; dessins 01, 02, 07 et textes mis à jour.","v0.7 — cord moved to the inner third of the frame width (axis 40 from the outer edge), clear of the glass edge; drawings 01, 02, 07 and texts updated.","v0.7 — koord verplaatst naar het binnenste derde van de kaderbreedte (as op 40 van de buitenrand), weg van de glasrand; tekeningen 01, 02, 07 en teksten bijgewerkt.","v0.7 — Rundschnur ins innere Drittel der Rahmenbreite verlegt (Achse 40 vom Außenrand), abseits der Glaskante; Zeichnungen 01, 02, 07 und Texte aktualisiert.")},
     {d:"25-09-2026", t:L("Site en ligne : https://aquarium-k9.vercel.app (code EVA), déploiement automatique à chaque push.","Site online: https://aquarium-k9.vercel.app (code EVA), automatic deployment on every push.","Site online: https://aquarium-k9.vercel.app (code EVA), automatische deployment bij elke push.","Website online: https://aquarium-k9.vercel.app (Code EVA), automatisches Deployment bei jedem Push.")},
-    {d:"25-09-2026", t:L("v0.8 — charte commune aux trois dossiers (base, vitrine, aquarium) : mêmes styles, barre de titre et cartouche ; site en quatre langues (FR / EN / NL / DE) par onglets ; section Documents avec vignette, numéro, révision et statut par document ; dessins téléchargeables en PDF avec cartouche et en PNG.","v0.8 — shared design for the three files (base, showcase, aquarium): same styles, title bar and title block; site in four languages (FR / EN / NL / DE) via tabs; Documents section with thumbnail, number, revision and status per document; drawings downloadable as PDF with title block and as PNG.","v0.8 — gemeenschappelijke huisstijl voor de drie dossiers (sokkel, vitrine, aquarium): dezelfde stijlen, titelbalk en cartouche; site in vier talen (FR / EN / NL / DE) via tabbladen; sectie Documenten met vignet, nummer, revisie en status per document; tekeningen te downloaden als PDF met cartouche en als PNG.","v0.8 — gemeinsames Erscheinungsbild der drei Dossiers (Sockel, Vitrine, Aquarium): gleiche Stile, Titelleiste und Schriftfeld; Website in vier Sprachen (FR / EN / NL / DE) über Reiter; Abschnitt Dokumente mit Vorschaubild, Nummer, Revision und Status je Dokument; Zeichnungen als PDF mit Schriftfeld und als PNG herunterladbar.")}
+    {d:"25-09-2026", t:L("v0.8 — charte commune aux trois dossiers (base, vitrine, aquarium) : mêmes styles, barre de titre et cartouche ; site en quatre langues (FR / EN / NL / DE) par onglets ; section Documents avec vignette, numéro, révision et statut par document ; dessins téléchargeables en PDF avec cartouche et en PNG.","v0.8 — shared design for the three files (base, showcase, aquarium): same styles, title bar and title block; site in four languages (FR / EN / NL / DE) via tabs; Documents section with thumbnail, number, revision and status per document; drawings downloadable as PDF with title block and as PNG.","v0.8 — gemeenschappelijke huisstijl voor de drie dossiers (sokkel, vitrine, aquarium): dezelfde stijlen, titelbalk en cartouche; site in vier talen (FR / EN / NL / DE) via tabbladen; sectie Documenten met vignet, nummer, revisie en status per document; tekeningen te downloaden als PDF met cartouche en als PNG.","v0.8 — gemeinsames Erscheinungsbild der drei Dossiers (Sockel, Vitrine, Aquarium): gleiche Stile, Titelleiste und Schriftfeld; Website in vier Sprachen (FR / EN / NL / DE) über Reiter; Abschnitt Dokumente mit Vorschaubild, Nummer, Revision und Status je Dokument; Zeichnungen als PDF mit Schriftfeld und als PNG herunterladbar.")},
+    {d:"28-09-2026", t:L("v0.9 — appel d'offres : 20 ateliers repérés (Wallonie 8, Flandre 7, Nord de la France 5), classés en trois vagues ; section « Ateliers à consulter » et tableau de suivi Excel.","v0.9 — call for tenders: 20 workshops identified (Wallonia 8, Flanders 7, northern France 5), ranked in three waves; “Workshops to consult” section and Excel tracking sheet.","v0.9 — aanbesteding: 20 ateliers gevonden (Wallonië 8, Vlaanderen 7, Noord-Frankrijk 5), in drie golven; sectie “Te raadplegen ateliers” en Excel-opvolgtabel.","v0.9 — Ausschreibung: 20 Werkstätten ermittelt (Wallonien 8, Flandern 7, Nordfrankreich 5), in drei Wellen; Abschnitt „Anzufragende Werkstätten“ und Excel-Verfolgungstabelle.")}
   ]
 };

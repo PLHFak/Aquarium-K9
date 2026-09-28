@@ -18,6 +18,7 @@
   <section id="principe"></section>
   <section id="dimensions"></section>
   <section id="montage"></section>
+  <section id="ateliers"></section>
   <section id="fournitures"></section>
   <section id="ouverts"></section>
   <section id="documents"></section>
@@ -43,6 +44,9 @@ LV.init(window.DATA, "aquarium", ({t, esc}) => {
 
   const m = D.montage;
   $("#montage").innerHTML = `<h2>${esc(t(m.titre))}</h2>${img(m.img, t(m.titre))}<div class="scroll"><table><tr><th>#</th>${m.colonnes.map(c => `<th>${esc(t(c))}</th>`).join("")}</tr>${m.etapes.map((e, i) => `<tr><td>${i + 1}</td>${e.map(c => `<td>${esc(t(c))}</td>`).join("")}</tr>`).join("")}</table></div><details><summary>${esc(t(m.entretien_t))}</summary><p>${esc(t(m.entretien))}</p></details>`;
+
+  const at = D.ateliers;
+  $("#ateliers").innerHTML = `<h2>${esc(t(at.titre))}</h2><p>${esc(t(at.intro))}</p>${[1,2,3].map(v => `<h3>${esc(t(at.vague))} ${v}</h3><div class="scroll"><table><tr>${at.colonnes.map(c => `<th>${esc(t(c))}</th>`).join("")}</tr>${at.items.filter(a => a.vague === v).map(a => `<tr><td>${a.rang}</td><td><a href="${a.site}" target="_blank" rel="noopener">${esc(a.nom)}</a></td><td>${esc(a.ville)}<br><span class="leg">${esc(a.region)}</span></td><td>${esc(a.taille)}</td><td>${esc(a.spec)}</td><td>${esc(a.ref)}</td><td>${esc(a.contact)}</td><td>${esc(a.pourquoi)}</td></tr>`).join("")}</table></div>`).join("")}`;
 
   const f = D.fournitures;
   $("#fournitures").innerHTML = `<h2>${esc(t(f.titre))}</h2><div class="scroll"><table><tr>${f.colonnes.map(c => `<th>${esc(t(c))}</th>`).join("")}</tr>${f.lignes.map(l => `<tr>${l.map(c => `<td>${esc(t(c))}</td>`).join("")}</tr>`).join("")}</table></div>`;
