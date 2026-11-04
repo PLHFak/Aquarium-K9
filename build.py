@@ -22,5 +22,12 @@ for f, num, rev, titre in DRAW:
     stamp_pdf(f"docs/plans/{f}.png", f"docs/pdf/{num}_{f.split('_',1)[1] if f[0].isdigit() and not f.startswith('3D') else f.split('_',2)[2]}.pdf",
               dict(titre="Vitrine « aquarium » des cristaux — "+titre, num=num, rev=rev, date="25-09-26", statut="CONSULTATION",
                    objet="Caisson inox, couvercle vitré, joint et azote sec", url=URL))
+for src, out in [("docs/assemblage/Aquarium_revise_33_cristaux_02-11-26.pdf","aquarium_revise"),("docs/assemblage/Mesures-40-blocs_Photogravia_27-10-26.pdf","mesures_40")]:
+    thumb(src, f"docs/thumbs/{out}.jpg")
+for f, num, titre in [("08_plan_pose_cristaux","LV-AQ-ASS-01","Plan de pose des 33 cristaux"),("09_sens_de_pose","LV-AQ-ASS-02","Sens de pose : du relevé à la vitrine")]:
+    thumb(f"docs/plans/{f}.png", f"docs/thumbs/{f}.jpg")
+    stamp_pdf(f"docs/plans/{f}.png", f"docs/pdf/{num}_{f.split('_',1)[1]}.pdf",
+              dict(titre="Vitrine « aquarium » des cristaux — "+titre, num=num, rev="0", date="04-11-26", statut="ÉTUDE",
+                   objet="Assemblage des 33 cristaux Photogravia", url=URL))
 S = sizes(".")
 print(len(S), "fichiers mesurés ·", now_be())

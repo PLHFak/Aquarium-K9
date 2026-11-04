@@ -17,6 +17,7 @@
   <section id="contexte"></section>
   <section id="principe"></section>
   <section id="dimensions"></section>
+  <section id="assemblage"></section>
   <section id="montage"></section>
   <section id="ateliers"></section>
   <section id="fournitures"></section>
@@ -41,6 +42,18 @@ LV.init(window.DATA, "aquarium", ({t, esc}) => {
 
   const dm = D.dimensions;
   $("#dimensions").innerHTML = `<h2>${esc(t(dm.titre))}</h2><div class="scroll"><table><tr>${dm.colonnes.map(c => `<th>${esc(t(c))}</th>`).join("")}</tr>${dm.lignes.map(l => `<tr>${l.map(c => `<td>${esc(t(c))}</td>`).join("")}</tr>`).join("")}</table></div><p class="leg">${esc(t(dm.note))}</p>`;
+
+  const as = D.assemblage, tab = (cols, rows) => `<div class="scroll"><table><tr>${cols.map(c => `<th>${esc(t(c))}</th>`).join("")}</tr>${rows.map(r => `<tr>${r.map(c => `<td>${esc(t(c))}</td>`).join("")}</tr>`).join("")}</table></div>`;
+  $("#assemblage").innerHTML = `<h2>${esc(t(as.titre))}</h2><p class="note">${esc(t(as.avis))}</p>
+    <div class="kv">${as.chiffres.map(c => `<div><b>${esc(t(c.k))}</b>${esc(t(c.v))}</div>`).join("")}</div>
+    ${img(as.plan, t(as.plan_leg))}<p class="leg">${esc(t(as.plan_leg))}</p>
+    ${as.blocs.map(b => `<h3>${esc(t(b.t))}</h3>${b.p.map(x => `<p>${esc(t(x))}</p>`).join("")}${b.liste ? `<ul class="pts">${b.liste.map(x => `<li>${esc(t(x))}</li>`).join("")}</ul>` : ""}${b.img ? img(b.img, t(b.leg)) + `<p class="leg">${esc(t(b.leg))}</p>` : ""}`).join("")}
+    <h3>${esc(t(as.controle_t))}</h3>${tab(as.controle_cols, as.controle)}
+    <h3>${esc(t(as.protocole_t))}</h3><ul class="pts">${as.protocole.map(x => `<li>${esc(t(x))}</li>`).join("")}</ul>
+    <h3>${esc(t(as.pose_t))}</h3>${tab(as.pose_cols, as.pose)}<p class="note">${esc(t(as.pose_note))}</p>
+    <details open><summary>${esc(t(as.table_t))}</summary>${tab(as.table_cols, as.table)}</details>
+    <details><summary>${esc(t(as.reserve_t))}</summary>${tab(as.reserve_cols, as.reserve)}</details>
+    <p class="leg">${esc(t(as.sources_t))} : ${as.sources.map(x => `<a href="${esc(x.u)}" target="_blank" rel="noopener">${esc(x.t)}</a>`).join(" · ")}</p>`;
 
   const m = D.montage;
   $("#montage").innerHTML = `<h2>${esc(t(m.titre))}</h2>${img(m.img, t(m.titre))}<div class="scroll"><table><tr><th>#</th>${m.colonnes.map(c => `<th>${esc(t(c))}</th>`).join("")}</tr>${m.etapes.map((e, i) => `<tr><td>${i + 1}</td>${e.map(c => `<td>${esc(t(c))}</td>`).join("")}</tr>`).join("")}</table></div><details><summary>${esc(t(m.entretien_t))}</summary><p>${esc(t(m.entretien))}</p></details>`;
