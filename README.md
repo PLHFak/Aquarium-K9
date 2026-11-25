@@ -30,3 +30,7 @@ Accès : code `EVA` saisi au clavier ou `?code=EVA` dans le lien (côté client,
 - `api/_cfg.js` — URL et clé *anon* Supabase (variables Vercel `SUPABASE_URL` / `SUPABASE_ANON_KEY` prioritaires).
 - `docs/lv_analytics.sql` — à exécuter une fois dans Supabase (tables `lv_hits`, `lv_config` avec le code administrateur, fonction `lv_stats`). Commun aux trois sites.
 - Le chapitre apparaît en bas de page quand le site est ouvert avec le code administrateur (saisi au clavier ; il n'est jamais mis dans un lien). Les visites administrateur ne sont pas comptées.
+
+## Page « Rosée extérieure et équilibrage de pression » (LV-AQ-ASS-07 rév. 1)
+
+`rosee-equilibrage.html` + `data_rosee.js` : matelas d'expansion interne calculé sur le volume libre du STEP (`docs/equilibrage/matelas_step.py`, entrées `step_parts.json` et `step_cavity.json`), rosée (`rosee_modele.py`), notions physiques et équations. Dessins `docs/plans/11_*` et `12_*`, STEP dans `docs/assemblage/`. Lancer ensuite `python3 build.py`.

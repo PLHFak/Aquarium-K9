@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Rosée extérieure et équilibrage de pression — Les Veilleurs</title>
+<link rel="stylesheet" href="lv.css">
+<style>.eq{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13.5px;background:#fff;border-left:3px solid var(--line);padding:6px 10px}</style>
+</head>
+<body>
+<div id="gate"></div>
+<div id="topbar"></div>
+<header id="hdr"></header>
+<nav id="nav"></nav>
+<main>
+  <section id="synthese"></section>
+  <section id="dessin"></section>
+  <section id="matelas"></section>
+  <section id="rosee"></section>
+  <section id="pedago"></section>
+  <section id="ouverts"></section>
+  <section id="documents"></section>
+  <section id="journal"></section>
+</main>
+<footer id="foot"></footer>
+<script src="docs/sizes.js"></script>
+<script src="data_rosee.js"></script>
+<script src="lv.js"></script>
+<script>
+LV.init(window.DATA, "aquarium", ({t, esc}) => {
+  const D = window.DATA, $ = s => document.querySelector(s);
+  const img = (src, alt) => `<a href="${esc(src)}" target="_blank" rel="noopener"><img src="${esc(src)}" alt="${esc(alt||"")}" loading="lazy"></a>`;
+  const tab = (cols, rows) => `<div class="scroll"><table><tr>${cols.map(c => `<th>${esc(t(c))}</th>`).join("")}</tr>${rows.map(r => `<tr>${r.map(c => `<td>${esc(t(c))}</td>`).join("")}</tr>`).join("")}</table></div>`;
+  const kv = a => `<div class="kv">${a.map(c => `<div><b>${esc(t(c.k))}</b>${esc(t(c.v))}</div>`).join("")}</div>`;
+  const blocs = a => a.map(b => `<h3>${esc(t(b.t))}</h3>${(b.p||[]).map(x => `<p>${esc(t(x))}</p>`).join("")}${b.liste ? `<ul class="pts">${b.liste.map(x => `<li>${esc(t(x))}</li>`).join("")}</ul>` : ""}${b.cols ? tab(b.cols, b.rows) : ""}${b.note ? `<p class="note">${esc(t(b.note))}</p>` : ""}`).join("");
+
+  const s = D.synthese;
+  $("#synthese").innerHTML = `<h2>${esc(t(s.titre))}</h2><p>${esc(t(s.texte))}</p>${kv(s.chiffres)}`;
+
+  const d = D.dessin;
+  $("#dessin").innerHTML = `<h2>${esc(t(d.titre))}</h2>${img(d.img, t(d.titre))}<p class="leg">${esc(t(d.img_leg))}</p>${d.p.map(x => `<p>${esc(t(x))}</p>`).join("")}<ul class="pts">${d.liste.map(x => `<li>${esc(t(x))}</li>`).join("")}</ul>`;
+
+  $("#matelas").innerHTML = `<h2>${esc(t(D.matelas.titre))}</h2>${blocs(D.matelas.blocs)}`;
+
+  const r = D.rosee;
+  $("#rosee").innerHTML = `<h2>${esc(t(r.titre))}</h2><p class="note">${esc(t(r.note))}</p>${img(r.img, t(r.titre))}<p class="leg">${esc(t(r.img_leg))}</p>${kv(r.chiffres)}${blocs(r.blocs)}`;
+
+  const p = D.pedago;
+  $("#pedago").innerHTML = `<h2>${esc(t(p.titre))}</h2><p>${esc(t(p.intro))}</p>${p.items.map(b => `<details open><summary>${esc(t(b.t))}</summary>${(b.p||[]).map(x => `<p>${esc(t(x))}</p>`).join("")}${b.liste ? `<ul class="pts">${b.liste.map(x => `<li>${esc(t(x))}</li>`).join("")}</ul>` : ""}</details>`).join("")}`;
+
+  $("#ouverts").innerHTML = `<h2>${esc(t(D.points_ouverts.titre))}</h2><ul class="pts">${D.points_ouverts.items.map(x => `<li>${esc(t(x))}</li>`).join("")}</ul>`;
+});
+</script>
+</body>
+</html>

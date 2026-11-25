@@ -33,5 +33,13 @@ thumb("docs/plans/10_equilibrage_poche.png", "docs/thumbs/10_equilibrage_poche.j
 stamp_pdf("docs/plans/10_equilibrage_poche.png", "docs/pdf/LV-AQ-EQ-01_equilibrage_poche.pdf",
           dict(titre="Vitrine « aquarium » des cristaux — Poche de compensation", num="LV-AQ-EQ-01", rev="0", date="25-11-26", statut="ÉTUDE",
                objet="Équilibrage de pression de la zone libre", url=URL))
+thumb("docs/plans/11_aquarium_retenu.png", "docs/thumbs/11_aquarium_retenu.jpg")
+stamp_pdf("docs/plans/11_aquarium_retenu.png", "docs/pdf/LV-AQ-EQ-03_aquarium_retenu.pdf",
+          dict(titre="Vitrine « aquarium » des cristaux — Aquarium retenu, dispositifs et matelas", num="LV-AQ-EQ-03", rev="0", date="25-11-26", statut="ÉTUDE",
+               objet="Dessin tiré du STEP du 25-11-26, dispositifs à l'intérieur", url=URL))
+thumb("docs/plans/12_rosee_nuit.png", "docs/thumbs/12_rosee_nuit.jpg")
+stamp_pdf("docs/plans/12_rosee_nuit.png", "docs/pdf/LV-AQ-EQ-04_rosee_nuit.pdf",
+          dict(titre="Vitrine « aquarium » des cristaux — Rosée : courbes d'une nuit claire", num="LV-AQ-EQ-04", rev="0", date="25-11-26", statut="ÉTUDE",
+               objet="Rosée extérieure et inertie des cristaux", url=URL))
 S = sizes(".")
 print(len(S), "fichiers mesurés ·", now_be())

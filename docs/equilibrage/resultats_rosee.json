@@ -1,0 +1,26 @@
+{
+ "HR_air9_5_rosee8_5_pct": 93.5,
+ "es_9_5C_hPa": 11.86,
+ "es_8_5C_hPa": 11.08,
+ "rosee_air9_5_HR90": 7.9,
+ "rosee_air9_5_HR95": 8.7,
+ "surface_vitrage_m2": 0.74,
+ "force_vitrage_kN": {
+  "+221 hPa": 16.3,
+  "-142 hPa": 10.5
+ },
+ "force_vitrage_kgf": {
+  "+221 hPa": 1662,
+  "-142 hPa": 1070
+ },
+ "aire_matelas_m2": 1.19,
+ "permeation_g_par_an": {
+  "alu 0,001": 0.4,
+  "alu 0,01 (soudures)": 4.4,
+  "BOPP 5": 2180.8
+ },
+ "tau_h_5": 11.7,
+ "tau_h_10": 5.8,
+ "C_kJ_m2K": 210,
+ "perte_rayonnement_ciel_clair_W_m2": 83
+}

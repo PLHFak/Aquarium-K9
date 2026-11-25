@@ -1,0 +1,28 @@
+{
+ "volume_libre_step_L": 86.82,
+ "dispositifs_L": 2.0,
+ "volume_utile_L": 84.8,
+ "dilatation_max_pct": 23.3,
+ "contraction_max_pct": 13.6,
+ "gaz_sec_L": 68.8,
+ "matelas_fermeture_L": 16.0,
+ "matelas_max_L": 25.4,
+ "variation_totale_L": 31.3,
+ "caisson_rigide_hPa": {
+  "chaud": 221,
+  "froid": -142
+ },
+ "cristaux_mm": {
+  "hauteur": 301,
+  "profondeur": 100,
+  "longueur": 2205,
+  "jeu_arriere": 55.0,
+  "jeu_avant": 53.5
+ },
+ "matelas_geometrie_mm": {
+  "longueur": 1985,
+  "hauteur": 301,
+  "epaisseur_fermeture": 27,
+  "epaisseur_max": 42
+ }
+}
