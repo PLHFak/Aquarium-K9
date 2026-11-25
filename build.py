@@ -29,5 +29,9 @@ for f, num, titre in [("08_plan_pose_cristaux","LV-AQ-ASS-01","Plan de pose des 
     stamp_pdf(f"docs/plans/{f}.png", f"docs/pdf/{num}_{f.split('_',1)[1]}.pdf",
               dict(titre="Vitrine « aquarium » des cristaux — "+titre, num=num, rev="0", date="04-11-26", statut="ÉTUDE",
                    objet="Assemblage des 33 cristaux Photogravia", url=URL))
+thumb("docs/plans/10_equilibrage_poche.png", "docs/thumbs/10_equilibrage_poche.jpg")
+stamp_pdf("docs/plans/10_equilibrage_poche.png", "docs/pdf/LV-AQ-EQ-01_equilibrage_poche.pdf",
+          dict(titre="Vitrine « aquarium » des cristaux — Poche de compensation", num="LV-AQ-EQ-01", rev="0", date="25-11-26", statut="ÉTUDE",
+               objet="Équilibrage de pression de la zone libre", url=URL))
 S = sizes(".")
 print(len(S), "fichiers mesurés ·", now_be())

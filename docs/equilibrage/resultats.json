@@ -1,0 +1,27 @@
+{
+ "volume_libre_L": 50.4,
+ "dilatation_max_pct": 23.3,
+ "contraction_max_pct": 13.6,
+ "variation_totale_L": 18.6,
+ "pression_seule_L": 5.1,
+ "temperature_seule_L": 13.1,
+ "poche_interne": {
+  "gaz_sec_fermeture_L": 40.9,
+  "poche_fermeture_L": 9.5,
+  "poche_max_L": 15.1
+ },
+ "poche_externe": {
+  "reserve_fermeture_L": 6.8,
+  "capacite_L": 18.6
+ },
+ "poche_fermeture_selon_temperature_L": {
+  "5 C": 10.9,
+  "15 C": 9.5,
+  "25 C": 8.1
+ },
+ "poche_max_si_40C_L": 12.8,
+ "caisson_rigide_sans_poche_hPa": {
+  "chaud_basse_pression": 221,
+  "froid_haute_pression": -142
+ }
+}
