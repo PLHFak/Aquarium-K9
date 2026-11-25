@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Note LV-AQ-ASS-07 rév. 1 — Rosée extérieure et équilibrage de pression — Les Veilleurs</title>
+<link rel="stylesheet" href="lv.css">
+<style>
+.fig{border:1px solid var(--line);padding:14px;margin:14px 0;background:#fff}.fig figcaption{font-size:13px;color:var(--mute);margin-top:8px}
+.fig svg{width:100%;height:auto;display:block}
+.ctl{display:flex;align-items:center;gap:12px;margin-top:10px;font-size:14px}.ctl input{flex:1}.ctl button{font:inherit;padding:5px 14px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.lab{font-size:11px;fill:#6b7380}.val{font-size:12px;font-weight:600}.lead{font-size:18px}.sig{margin-top:30px;color:var(--mute);font-size:14px}
+</style>
+</head>
+<body>
+<div id="gate"></div>
+<div id="topbar"></div>
+<header id="hdr"></header>
+<main>
+<section>
+<p class="lead">Mise à jour du 9 novembre avec le dessin retenu (STEP du 25 novembre) et tous les dispositifs à l'intérieur. Deux conclusions. Adossée à 215 kg de cristal et à la pierre, la vitre reste 1,5 à 2,5 °C <em>au-dessus</em> du point de rosée la nuit : la masse est notre alliée. Et la vitrine respire par un matelas d'expansion interne de 30 L nominaux, qui empêche l'air marin d'entrer par les joints.</p>
+<div class="kv">
+  <div><b>Volume libre réel (STEP)</b>86,8 L, dont 84,8 L utiles</div>
+  <div><b>Matelas d'expansion</b>16,0 L à la fermeture · 25,4 L au maximum · 30 L nominaux</div>
+  <div><b>Sans matelas</b>+221 / −142 hPa : 1,1 à 1,7 t sur la vitre</div>
+  <div><b>Marge de rosée, vitre collée</b>+1,5 à +2,5 °C la nuit</div>
+</div>
+</section>
+
+<section>
+<h2>1. Rappel : pourquoi la chaise en métal est mouillée le matin</h2>
+<p>Par nuit claire, toute surface rayonne sa chaleur vers le ciel. Une chaise en métal n'a presque pas de masse : elle descend 2 à 3 °C sous l'air, passe sous le point de rosée, et l'humidité se dépose dessus. Le banc de pierre à côté reste sec : il restitue toute la nuit la chaleur emmagasinée le jour. Nos cristaux sont le banc de pierre.</p>
+<figure class="fig">
+<svg id="anim" viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" aria-label="Animation : température de l'air, point de rosée, chaise métallique et bloc de cristal au fil d'une nuit">
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop id="sk1" offset="0" stop-color="#1b2a4a"/><stop id="sk2" offset="1" stop-color="#3d5a86"/></linearGradient></defs>
+  <rect x="560" y="10" width="290" height="230" rx="8" fill="url(#sky)"/>
+  <circle id="sun" cx="800" cy="260" r="16" fill="#f6c453" opacity="0"/>
+  <rect x="560" y="200" width="290" height="40" fill="#5b6b5a"/>
+  <g id="chair" stroke="#c9ced6" stroke-width="4" fill="none" stroke-linecap="round">
+    <line x1="610" y1="200" x2="610" y2="150"/><line x1="650" y1="200" x2="650" y2="150"/>
+    <line x1="604" y1="150" x2="656" y2="150"/><line x1="610" y1="150" x2="610" y2="105"/><line x1="604" y1="105" x2="616" y2="105"/>
+  </g>
+  <g id="dropsChair" fill="#bfe3ff" opacity="0"><circle cx="618" cy="148" r="2.5"/><circle cx="636" cy="152" r="2.5"/><circle cx="648" cy="147" r="2.2"/><circle cx="612" cy="128" r="2.2"/><circle cx="609" cy="172" r="2.2"/><circle cx="651" cy="178" r="2.2"/></g>
+  <text x="630" y="222" text-anchor="middle" font-size="12" fill="#eef2f7">chaise métal</text>
+  <text id="chairT" x="630" y="236" text-anchor="middle" class="val" fill="#eef2f7"></text>
+  <rect x="720" y="140" width="110" height="60" rx="4" fill="#dff1ff" stroke="#9cc7e8" stroke-width="2" opacity=".9"/>
+  <text x="775" y="175" text-anchor="middle" font-size="12" fill="#2a6fb0">cristal + pierre</text>
+  <g id="dropsBlock" fill="#bfe3ff" opacity="0"><circle cx="735" cy="150" r="2.5"/><circle cx="760" cy="155" r="2.5"/><circle cx="800" cy="148" r="2.5"/><circle cx="815" cy="185" r="2.2"/></g>
+  <text id="blockT" x="775" y="236" text-anchor="middle" class="val" fill="#eef2f7"></text>
+  <text id="clock" x="575" y="32" font-size="18" font-weight="600" fill="#fff"></text>
+  <text id="verdict" x="835" y="32" text-anchor="end" font-size="13" fill="#fff"></text>
+  <g transform="translate(50,20)">
+    <line x1="0" y1="0" x2="0" y2="200" stroke="#d9dde3"/><line x1="0" y1="200" x2="470" y2="200" stroke="#d9dde3"/>
+    <g id="grid"></g>
+    <polyline id="pAir" fill="none" stroke="#1d2430" stroke-width="2"/>
+    <polyline id="pDew" fill="none" stroke="#3b8bd0" stroke-width="2" stroke-dasharray="6 4"/>
+    <polyline id="pChair" fill="none" stroke="#9aa3ad" stroke-width="2.5"/>
+    <polyline id="pBlock" fill="none" stroke="#d9822b" stroke-width="2.5"/>
+    <line id="cursor" x1="0" y1="0" x2="0" y2="200" stroke="#1d2430" stroke-width="1" stroke-dasharray="3 3"/>
+    <g transform="translate(0,236)" class="val">
+      <line x1="0" y1="-4" x2="22" y2="-4" stroke="#1d2430" stroke-width="2"/><text x="28" y="0" fill="#1d2430">air</text>
+      <line x1="70" y1="-4" x2="92" y2="-4" stroke="#3b8bd0" stroke-width="2" stroke-dasharray="6 4"/><text x="98" y="0" fill="#3b8bd0">point de rosée</text>
+      <line x1="215" y1="-4" x2="237" y2="-4" stroke="#9aa3ad" stroke-width="2.5"/><text x="243" y="0" fill="#9aa3ad">chaise métal</text>
+      <line x1="345" y1="-4" x2="367" y2="-4" stroke="#d9822b" stroke-width="2.5"/><text x="373" y="0" fill="#d9822b">cristal + pierre</text>
+    </g>
+    <text x="-8" y="-6" class="lab" text-anchor="end">°C</text>
+    <text x="0" y="216" class="lab">18 h</text><text x="157" y="216" class="lab" text-anchor="middle">0 h</text><text x="313" y="216" class="lab" text-anchor="middle">6 h</text><text x="470" y="216" class="lab" text-anchor="end">12 h</text>
+  </g>
+</svg>
+<div class="ctl"><button id="play">Pause</button><input id="t" type="range" min="0" max="18" step="0.05" value="0"><span>Glissez pour avancer dans la nuit</span></div>
+<figcaption>Nuit claire d'octobre à la côte, brise de mer en fin de matinée (modèle horaire, ± 1 °C). La chaise passe sous le point de rosée vers 22 h et reste mouillée jusqu'au soleil ; le cristal ne descend jamais sous l'air.</figcaption>
+</figure>
+</section>
+
+<section>
+<h2>2. Avec et sans cristaux derrière la vitre</h2>
+<p><b>Sans masse</b> (vitre devant une lame d'air, feuille extérieure d'un double vitrage) : la vitre rayonne vers le ciel et descend sous l'air. Pour un air à 9,5 °C et une rosée à 8,5 °C, elle est à 8 °C : buée. En double vitrage, 4 à 8 h de rosée par nuit claire.</p>
+<p><b>Collée pleine face aux cristaux</b> : la masse recharge la vitre plus vite que le ciel ne la refroidit. Même cas : 11,5 °C, donc sèche, avec +1,5 à +2,5 °C de marge.</p>
+<h3>Les cas où la vitre perlera quand même</h3>
+<ul class="pts">
+<li>Après plusieurs jours froids, une journée grise et humide venue de la mer : la masse est en retard sur la météo. Buée 3 à 4 h autour de midi le premier jour, 1 à 2 h le deuxième ; une dizaine d'épisodes par an.</li>
+<li>Brouillard de mer : tout est mouillé, quelle que soit la vitre.</li>
+<li>Un film chauffant transparent de 40 W, piloté par un capteur de point de rosée, traite les redoux ; il faut prévoir un passage de câble.</li>
+</ul>
+<div class="note"><b>Recommandation : simple vitrage, pas un double.</b> Verre feuilleté de sécurité (P4A à P5A, EN 356), extra-clair, antireflet des deux faces, collé pleine face au silicone optique, sans lame d'air.</div>
+</section>
+
+<section>
+<h2>3. Équilibrage de pression : le matelas d'expansion interne</h2>
+<p>La zone libre de la vitrine, mesurée sur le STEP, fait 86,8 L ; avec 2 L de dispositifs, il reste 84,8 L pour le gaz sec et le matelas. Entre le plus chaud et bas (+60 °C, 950 hPa) et le plus froid et haut (−15 °C, 1 050 hPa), le gaz sec change de 37 % de son volume, soit 31 L. Un sac plat, mou, en film barrière à feuille d'aluminium, relié à l'extérieur par un évent filtré, absorbe cette variation à pression constante.</p>
+<div class="scroll"><table><tr><th>État</th><th>Gaz sec</th><th>Matelas</th></tr>
+<tr><td>+60 °C, 950 hPa (gaz dilaté de 23,3 %)</td><td>84,8 L</td><td>0 L, à plat</td></tr>
+<tr><td>Fermeture : 15 °C, 1 013 hPa</td><td>68,8 L</td><td>16,0 L</td></tr>
+<tr><td>−15 °C, 1 050 hPa (gaz contracté de 13,6 %)</td><td>59,4 L</td><td>25,4 L</td></tr></table></div>
+<p>On retient <b>30 L nominaux</b> (un sac de 1,99 × 0,30 m, ou deux de 15 L), couchés dans le jeu arrière derrière les cristaux : 27 mm d'épaisseur à la fermeture, 42 mm au maximum, pour 55 mm disponibles. Dispositifs (déshydratant, enregistreur, LED, évent) derrière la première colonne.</p>
+<a href="docs/plans/11_aquarium_retenu.png" target="_blank" rel="noopener"><img src="docs/plans/11_aquarium_retenu.png" alt="Aquarium retenu : vue de face, coupe et plan des dispositifs"></a>
+<p class="leg">LV-AQ-EQ-03 · dessin tiré du STEP ; matelas et dispositifs ajoutés schématiquement.</p>
+<h3>Points à trancher</h3>
+<ul class="pts">
+<li>Cristaux centrés en profondeur dans le STEP (55 mm derrière, 53,5 mm devant), alors que la rosée suppose le collage plein face contre la vitre. Le volume libre ne change pas s'ils sont poussés contre le verre.</li>
+<li>Volume réel des dispositifs (2 L supposés) et température maximale du gaz (+60 °C supposés) à confirmer au montage à blanc.</li>
+<li>Dessin LV-AQ-PL-04 à refaire : il montre encore une vessie d'environ 1 L et une chambre de visite extérieure.</li>
+</ul>
+<p>Les équations, pas à pas et expliquées, sont sur la <a href="rosee-equilibrage">page technique complète</a>, avec les scripts de calcul et le STEP.</p>
+</section>
+<p class="sig">Pierre — 25 novembre 2026. Remplace la note du 9 novembre. Modèle de rosée horaire simplifié : lire « fréquent » ou « rare » plutôt que « jamais ».</p>
+</main>
+<footer id="foot"></footer>
+<script src="docs/sizes.js"></script>
+<script src="lv.js"></script>
+<script>
+const D={version:"1",date:"25-11-2026",titre:{fr:"Rosée extérieure et équilibrage de pression"},sous_titre:{fr:"Note LV-AQ-ASS-07 · rév. 1 · de Pierre, à Eva et Jacky"},
+ cartouche:{num:"LV-AQ-ASS-07",statut:"ÉTUDE",genere:"25-11-2026",objet:{fr:"Note : rosée sur la vitre et matelas d'expansion interne"},url:"https://aquarium-k9.vercel.app/note-rosee-pression",repo:"github.com/PLHFak/aquarium-k9"}};
+LV.init(D,"aquarium",()=>{
+  const hourOf=t=>(18+t)%24, clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+  const smooth=(h,a,b)=>{const s=clamp((h-a)/(b-a),0,1);return s*s*(3-2*s);};
+  const air=t=>{const h=hourOf(t);return 12-2.5*Math.cos(2*Math.PI*(h-5)/24);};
+  const dew=t=>{const h=hourOf(t);return h>=10&&h<18?8.5+2*smooth(h,10,13):8.5;};
+  const night=t=>{const h=hourOf(t);return h>=18?smooth(h,18,20):(h<7?1:1-smooth(h,6.5,8.5));};
+  const sun=t=>{const h=hourOf(t);return h>=7&&h<15?Math.sin(Math.PI*(h-7)/8):0;};
+  const chair=t=>air(t)-2.6*night(t)+1.8*sun(t);
+  const block=t=>12.4-0.08*Math.min(t,13)+2.0*sun(t)*smooth(t,13,17);
+  const W=470,H=200,Tmin=6,Tmax=16,X=t=>t/18*W,Y=v=>H-(v-Tmin)/(Tmax-Tmin)*H;
+  const pts=f=>{let s='';for(let t=0;t<=18.001;t+=0.1)s+=X(t).toFixed(1)+','+Y(f(t)).toFixed(1)+' ';return s;};
+  const $=id=>document.getElementById(id);
+  $('pAir').setAttribute('points',pts(air));$('pDew').setAttribute('points',pts(dew));$('pChair').setAttribute('points',pts(chair));$('pBlock').setAttribute('points',pts(block));
+  for(let v=6;v<=16;v+=2){const y=Y(v);$('grid').insertAdjacentHTML('beforeend',`<line x1="0" y1="${y}" x2="${W}" y2="${y}" stroke="#eef1f4"/><text x="-8" y="${y+4}" class="lab" text-anchor="end">${v}</text>`);}
+  const range=$('t'),play=$('play');let t=0,running=true,last=null;
+  function render(){
+    const h=hourOf(t),hh=Math.floor(h),mm=Math.round((h-hh)*60/15)*15%60;
+    $('clock').textContent=`${hh} h ${mm.toString().padStart(2,'0')}`;
+    $('cursor').setAttribute('x1',X(t));$('cursor').setAttribute('x2',X(t));
+    const n=night(t),s=sun(t);
+    $('sk1').setAttribute('stop-color',n>0.5?'#1b2a4a':'#6fa3d6');$('sk2').setAttribute('stop-color',n>0.5?'#3d5a86':'#cfe3f5');
+    $('sun').setAttribute('opacity',s>0?1:0);$('sun').setAttribute('cy',260-150*s);$('sun').setAttribute('cx',780+40*s);
+    const wc=chair(t)<dew(t),wb=block(t)<dew(t);
+    $('dropsChair').setAttribute('opacity',wc?1:0);$('dropsBlock').setAttribute('opacity',wb?1:0);
+    $('chairT').textContent=chair(t).toFixed(1)+' °C'+(wc?' · mouillée':'');
+    $('blockT').textContent=block(t).toFixed(1)+' °C'+(wb?' · mouillé':' · sec');
+    $('verdict').textContent=`air ${air(t).toFixed(1)} °C · rosée ${dew(t).toFixed(1)} °C`;range.value=t;
+  }
+  function step(ts){if(!running){last=null;return;}if(last!==null){t+=(ts-last)/1000*1.2;if(t>18)t=0;}last=ts;render();requestAnimationFrame(step);}
+  play.addEventListener('click',()=>{running=!running;play.textContent=running?'Pause':'Lecture';if(running)requestAnimationFrame(step);});
+  range.addEventListener('input',()=>{t=parseFloat(range.value);running=false;play.textContent='Lecture';render();});
+  render();requestAnimationFrame(step);
+});
+</script>
+</body>
+</html>
