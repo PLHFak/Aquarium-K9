@@ -77,6 +77,8 @@
     g.innerHTML=`<form><p>${t(UI.code)}</p><input id="code" type="password" autofocus><button>${t(UI.entrer)}</button></form>`;
     // Code saisi : vérifié côté serveur (/api/gate). « team » = mot de passe du projet (visite non comptée), « admin » = code administrateur (chapitre Fréquentation).
     g.querySelector("form").addEventListener("submit",e=>{e.preventDefault();const i=g.querySelector("#code"),v=i.value.trim();if(v.length<3){i.value="";return}
+      // « EVA » saisi au clavier : même accès que le lien ?code=EVA (visite comptée).
+      if(v.toUpperCase()==="EVA"){sessionStorage.setItem("lv","1");g.remove();track("view");return}
       i.disabled=true;
       fetch("/api/gate",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({code:v})}).then(r=>r.ok?r.json():null).then(j=>{
         if(j&&j.role==="admin"){sessionStorage.setItem("lv","2");sessionStorage.setItem("lv_code",v);g.remove();statsInit()}

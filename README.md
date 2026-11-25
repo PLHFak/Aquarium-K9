@@ -20,7 +20,7 @@ Les trois sites (`Base_les_veilleurs`, `Vitrine_lenticulaire`, `Aquarium-K9`) pa
 
 Langue : onglets FR / EN / NL / DE en haut de page, ou `?lang=en` dans le lien ; le choix est mémorisé dans le navigateur.
 
-Accès : code `EVA` (côté client, `lv.js`), ou `?code=EVA` dans le lien. Pages en `noindex`.
+Accès : code `EVA` saisi au clavier ou `?code=EVA` dans le lien (côté client, `lv.js`) ; mot de passe du projet et code administrateur vérifiés côté serveur (`api/gate.js`). Pages en `noindex`.
 
 
 ## Mesure d'audience (chapitre « Fréquentation »)
